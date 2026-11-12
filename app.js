@@ -51,12 +51,12 @@ function renderJournal(data){
  for(const trip of trips){
   const first=trip.legs[0],last=trip.legs.at(-1),partial=trip.visible.length!==trip.legs.length;
   const amounts=['USD','INR'].map(currency=>{
-   const priced=trip.visible.filter(f=>f.price?.currency===currency);
+   const priced=trip.legs.filter(f=>f.price?.currency===currency);
    return priced.length?`${priced.some(f=>f.price.approximate)?'≈ ':''}${money(priced.reduce((sum,f)=>sum+f.price.legAmountCents,0),currency)}`:null;
   }).filter(Boolean);
   const heading=document.createElement('tr');heading.className='trip-heading';
   const dates=first.date===last.date?dateText(first.date):`${dateText(first.date)} – ${dateText(last.date)}`;
-  heading.innerHTML=`<th colspan="6" scope="rowgroup"><div class="trip-summary"><div><span class="trip-dates">${dates}</span><strong>${tripRoute(trip.legs)}</strong><span class="trip-count">${partial?`${trip.visible.length} of ${trip.legs.length} flights match filters`:`${trip.legs.length} flight${trip.legs.length===1?'':'s'}`} · ${number(trip.visible.reduce((sum,f)=>sum+f.miles,0))} mi${partial?' shown':''}</span></div><div class="trip-price">${amounts.join(' + ')||'Price not recorded'}<small>${partial?'Matching flights':'Trip ticket total'}</small></div></div></th>`;
+  heading.innerHTML=`<th colspan="6" scope="rowgroup"><div class="trip-summary"><div><span class="trip-dates">${dates}</span><strong>${tripRoute(trip.legs)}</strong><span class="trip-count">${partial?`${trip.visible.length} of ${trip.legs.length} flights match filters`:`${trip.legs.length} flight${trip.legs.length===1?'':'s'}`} · ${number(trip.visible.reduce((sum,f)=>sum+f.miles,0))} mi${partial?' shown':''}</span></div><div class="trip-price"><small>Total trip cost</small><b>${amounts.join(' + ')||'Price not recorded'}</b>${partial?'<small>Full trip, including hidden flights</small>':''}</div></div></th>`;
   rows.push(heading);
   for(const f of trip.visible){
    const tr=document.createElement('tr');tr.className='flight-row';
@@ -69,7 +69,9 @@ function renderJournal(data){
 function render(){
  const data=selected(), codes=new Set(data.flatMap(f=>[f.origin,f.destination]));
  const miles=data.reduce((s,f)=>s+f.miles,0), minutes=data.reduce((s,f)=>s+(f.minutes||0),0), missing=data.filter(f=>f.minutes==null).length;
- $('stats').innerHTML=[['TOTAL FLIGHTS',number(data.length),'Every takeoff, counted'],['AIRPORTS',number(codes.size),'Places along the way'],['MILES FLOWN',number(miles),`${(miles/24901).toFixed(1)}× around the Earth`],['HOURS IN FLIGHT',`${Math.floor(minutes/60)}<small>h</small> ${minutes%60}<small>m</small>`,missing?`${missing} flight duration${missing===1?'':'s'} not recorded`:'All durations recorded']].map(([label,value,note])=>`<div class="stat"><span class="stat-label">${label}</span><strong class="stat-value">${value}</strong><span class="stat-note">${note}</span></div>`).join('');
+ const selectedIds=new Set(data.map(f=>f.id));
+ const tripCount=groupTrips(flights).filter(trip=>trip.legs.some(f=>selectedIds.has(f.id))).length;
+ $('stats').innerHTML=[['TOTAL TRIPS',number(tripCount),year==='all'&&!query?'Journeys taken':'Trips matching filters'],['TOTAL FLIGHTS',number(data.length),'Every takeoff, counted'],['AIRPORTS',number(codes.size),'Places along the way'],['MILES FLOWN',number(miles),`${(miles/24901).toFixed(1)}× around the Earth`],['HOURS IN FLIGHT',`${Math.floor(minutes/60)}<small>h</small> ${minutes%60}<small>m</small>`,missing?`${missing} flight duration${missing===1?'':'s'} not recorded`:'All durations recorded']].map(([label,value,note])=>`<div class="stat"><span class="stat-label">${label}</span><strong class="stat-value">${value}</strong><span class="stat-note">${note}</span></div>`).join('');
  $('selection-note').textContent=`${year==='all'?'All years':year} · ${data.length} completed flight${data.length===1?'':'s'}`;
  document.querySelectorAll('.years button').forEach(b=>{b.classList.toggle('active',b.dataset.year===year);b.setAttribute('aria-pressed',String(b.dataset.year===year));});
  const airlines=rank(data.map(f=>f.airline)), visits=rank(data.flatMap(f=>[f.origin,f.destination]));

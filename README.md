@@ -28,4 +28,4 @@ Map geometry and JavaScript libraries are bundled locally; Google Fonts is optio
 
 ## Trip journal
 
-Flights are grouped chronologically into journeys. A departure from Seattle starts a new trip, a return to Seattle ends it, and gaps longer than 60 days start a new group. One-way records stay as their own trips. Grouping uses the complete history before filters; partial groups show matching-leg counts and costs. Trip date sorting changes group order while keeping legs in travel order.
+Flights are grouped chronologically into journeys. A departure from Seattle starts a new trip, a return to Seattle ends it, and gaps longer than 60 days start a new group. One-way records stay as their own trips. Grouping uses the complete history before filters; partial groups show matching-leg counts and the full trip cost, explicitly labeled. The headline trip count follows the active filters. Trip date sorting changes group order while keeping legs in travel order.
