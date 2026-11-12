@@ -42,7 +42,7 @@ function render(){
  $('empty').hidden=data.length>0;
  $('flight-rows').replaceChildren(...[...data].sort((a,b)=>(descending?-1:1)*(a.date.localeCompare(b.date)||a.id-b.id)).map(f=>{
  const tr=document.createElement('tr');
- tr.innerHTML=`<td>${dateText(f.date)}</td><td class="route-cell" title="${city(f.origin)} to ${city(f.destination)}">${f.origin}<span>→</span>${f.destination}</td><td class="airline-cell">${f.airline}<small>${f.flight==='Unknown'?'Flight number not recorded':f.flight}</small></td><td>${number(f.miles)} mi</td><td>${duration(f.minutes)}</td><td class="price-cell">${flightPrice(f)}</td>`;
+ tr.innerHTML=`<td>${dateText(f.date)}</td><td class="route-cell" title="${city(f.origin)} to ${city(f.destination)}">${f.origin}<span>→</span>${f.destination}</td><td class="price-cell">${flightPrice(f)}</td><td class="airline-cell">${f.airline}<small>${f.flight==='Unknown'?'Flight number not recorded':f.flight}</small></td><td>${number(f.miles)} mi</td><td>${duration(f.minutes)}</td>`;
  return tr;
  }));
  $('map-detail').textContent=data.length?'Select a route or airport to explore':'No matching flights';
