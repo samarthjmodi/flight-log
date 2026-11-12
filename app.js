@@ -17,6 +17,55 @@ function flightPrice(f){
 }
 function selected(){return flights.filter(f=>(year==='all'||f.date.startsWith(year))&&(!query||[f.airline,f.flight,f.origin,f.destination,city(f.origin),city(f.destination),f.date].join(' ').toLowerCase().includes(query)));}
 function rank(values){const counts=new Map();values.forEach(v=>counts.set(v,(counts.get(v)||0)+1));return [...counts].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]));}
+// Group the complete history before applying filters so trips retain their identity.
+function groupTrips(history){
+ const trips=[];
+ let current=null;
+ for(const flight of [...history].sort((a,b)=>a.date.localeCompare(b.date)||a.id-b.id)){
+  const previous=current?.legs.at(-1);
+  const gap=previous?(new Date(flight.date)-new Date(previous.date))/86400000:0;
+  if(!current||flight.origin==='SEA'||gap>60){
+   current={id:flight.id,legs:[]};trips.push(current);
+  }
+  current.legs.push(flight);
+  if(flight.destination==='SEA')current=null;
+ }
+ return trips;
+}
+function tripRoute(legs){
+ let route=legs[0].origin;
+ let previous=legs[0].origin;
+ for(const leg of legs){
+  if(previous!==leg.origin)route+=` ··· ${leg.origin}`;
+  route+=` → ${leg.destination}`;
+  previous=leg.destination;
+ }
+ return route;
+}
+function renderJournal(data){
+ const selectedIds=new Set(data.map(f=>f.id));
+ const trips=groupTrips(flights).map(trip=>({...trip,visible:trip.legs.filter(f=>selectedIds.has(f.id))})).filter(trip=>trip.visible.length);
+ if(descending)trips.reverse();
+ $('flight-count').textContent=`${trips.length} trips · ${data.length} flights`;
+ const rows=[];
+ for(const trip of trips){
+  const first=trip.legs[0],last=trip.legs.at(-1),partial=trip.visible.length!==trip.legs.length;
+  const amounts=['USD','INR'].map(currency=>{
+   const priced=trip.visible.filter(f=>f.price?.currency===currency);
+   return priced.length?`${priced.some(f=>f.price.approximate)?'≈ ':''}${money(priced.reduce((sum,f)=>sum+f.price.legAmountCents,0),currency)}`:null;
+  }).filter(Boolean);
+  const heading=document.createElement('tr');heading.className='trip-heading';
+  const dates=first.date===last.date?dateText(first.date):`${dateText(first.date)} – ${dateText(last.date)}`;
+  heading.innerHTML=`<th colspan="6" scope="rowgroup"><div class="trip-summary"><div><span class="trip-dates">${dates}</span><strong>${tripRoute(trip.legs)}</strong><span class="trip-count">${partial?`${trip.visible.length} of ${trip.legs.length} flights match filters`:`${trip.legs.length} flight${trip.legs.length===1?'':'s'}`} · ${number(trip.visible.reduce((sum,f)=>sum+f.miles,0))} mi${partial?' shown':''}</span></div><div class="trip-price">${amounts.join(' + ')||'Price not recorded'}<small>${partial?'Matching flights':'Trip ticket total'}</small></div></div></th>`;
+  rows.push(heading);
+  for(const f of trip.visible){
+   const tr=document.createElement('tr');tr.className='flight-row';
+   tr.innerHTML=`<td>${dateText(f.date)}${f.note?`<small class="flight-note">${f.note}</small>`:''}</td><td class="route-cell" title="${city(f.origin)} to ${city(f.destination)}">${f.origin}<span>→</span>${f.destination}</td><td class="price-cell">${flightPrice(f)}</td><td class="airline-cell">${f.airline}<small>${f.flight==='Unknown'?'Flight number not recorded':f.flight}</small></td><td>${number(f.miles)} mi</td><td>${f.durationApproximate?'≈ ':''}${duration(f.minutes)}</td>`;
+   rows.push(tr);
+  }
+ }
+ $('flight-rows').replaceChildren(...rows);
+}
 function render(){
  const data=selected(), codes=new Set(data.flatMap(f=>[f.origin,f.destination]));
  const miles=data.reduce((s,f)=>s+f.miles,0), minutes=data.reduce((s,f)=>s+(f.minutes||0),0), missing=data.filter(f=>f.minutes==null).length;
@@ -42,11 +91,7 @@ function render(){
  $('data-note').textContent=`Prices reflect Samarth’s share, with multi-leg booking totals split equally across legs (estimated). Any extra cent is assigned to the earliest legs. USD and INR are kept separate. Approximate source prices are marked ≈; sponsored flights cost $0. Ticket prices exclude extras. Completed flights only. Distances are great-circle estimates. Duration totals include available times${missing?`; ${missing} flight duration${missing===1?' is':'s are'} unknown`:''}.`;
  $('price-summary').textContent=`Ticket cost for selected flights: ${approximate?'≈ ':''}${totals.join(' + ')||'Not recorded'} · ${data.filter(f=>f.price).length} of ${data.length} flights priced`;
  $('empty').hidden=data.length>0;
- $('flight-rows').replaceChildren(...[...data].sort((a,b)=>(descending?-1:1)*(a.date.localeCompare(b.date)||a.id-b.id)).map(f=>{
- const tr=document.createElement('tr');
- tr.innerHTML=`<td>${dateText(f.date)}${f.note?`<small class="flight-note">${f.note}</small>`:''}</td><td class="route-cell" title="${city(f.origin)} to ${city(f.destination)}">${f.origin}<span>→</span>${f.destination}</td><td class="price-cell">${flightPrice(f)}</td><td class="airline-cell">${f.airline}<small>${f.flight==='Unknown'?'Flight number not recorded':f.flight}</small></td><td>${number(f.miles)} mi</td><td>${f.durationApproximate?'≈ ':''}${duration(f.minutes)}</td>`;
- return tr;
- }));
+ renderJournal(data);
  $('map-detail').textContent=data.length?'Select a route or airport to explore':'No matching flights';
  renderMap(data,codes);
 }
@@ -83,7 +128,7 @@ async function init(){
  zoom=d3.zoom().scaleExtent([1,7]).translateExtent([[-200,-120],[1300,680]]).on('zoom',e=>mapLayer.attr('transform',e.transform));svg.call(zoom);
  $('reset-map').onclick=()=>{svg.transition().duration(350).call(zoom.transform,d3.zoomIdentity);mapLayer.selectAll('.route').classed('selected',false);$('map-detail').textContent='Select a route or airport to explore';};
  $('search').addEventListener('input',e=>{query=e.target.value.trim().toLowerCase();render();});
- $('sort-date').onclick=()=>{descending=!descending;$('sort-date').textContent=`Date ${descending?'↓':'↑'}`;render();};
+ $('sort-date').onclick=()=>{descending=!descending;$('sort-date').textContent=`Trip date ${descending?'↓':'↑'}`;render();};
  render();
  }catch(error){$('stats').textContent='Unable to load flight data. Please refresh the page.';console.error(error);}
 }

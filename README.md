@@ -25,3 +25,7 @@ Map geometry and JavaScript libraries are bundled locally; Google Fonts is optio
 - D3.js v7 (ISC): https://github.com/d3/d3
 - topojson-client v3 (ISC): https://github.com/topojson/topojson-client
 - world-atlas v2 (ISC), derived from public-domain Natural Earth geography: https://github.com/topojson/world-atlas
+
+## Trip journal
+
+Flights are grouped chronologically into journeys. A departure from Seattle starts a new trip, a return to Seattle ends it, and gaps longer than 60 days start a new group. One-way records stay as their own trips. Grouping uses the complete history before filters; partial groups show matching-leg counts and costs. Trip date sorting changes group order while keeping legs in travel order.
