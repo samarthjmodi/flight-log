@@ -1,0 +1,612 @@
+[
+  {
+    "id": 1,
+    "date": "2018-07-13",
+    "airline": "Air India",
+    "flight": "Unknown",
+    "origin": "DEL",
+    "destination": "STV",
+    "miles": 582,
+    "minutes": null
+  },
+  {
+    "id": 2,
+    "date": "2019-09-11",
+    "airline": "Singapore Airlines",
+    "flight": "SQ423",
+    "origin": "BOM",
+    "destination": "SIN",
+    "miles": 2437,
+    "minutes": 330
+  },
+  {
+    "id": 3,
+    "date": "2019-09-12",
+    "airline": "Singapore Airlines",
+    "flight": "SQ28",
+    "origin": "SIN",
+    "destination": "SEA",
+    "miles": 8065,
+    "minutes": 880
+  },
+  {
+    "id": 4,
+    "date": "2020-01-30",
+    "airline": "Alaska Airlines",
+    "flight": "AS368",
+    "origin": "SEA",
+    "destination": "SFO",
+    "miles": 679,
+    "minutes": 136
+  },
+  {
+    "id": 5,
+    "date": "2021-06-11",
+    "airline": "Delta",
+    "flight": "DL2443",
+    "origin": "SEA",
+    "destination": "BOS",
+    "miles": 2489,
+    "minutes": 326
+  },
+  {
+    "id": 6,
+    "date": "2021-06-19",
+    "airline": "American",
+    "flight": "AA2001",
+    "origin": "PHL",
+    "destination": "SEA",
+    "miles": 2372,
+    "minutes": 374
+  },
+  {
+    "id": 7,
+    "date": "2021-12-24",
+    "airline": "Emirates",
+    "flight": "EK230",
+    "origin": "SEA",
+    "destination": "DXB",
+    "miles": 7412,
+    "minutes": 875
+  },
+  {
+    "id": 8,
+    "date": "2021-12-26",
+    "airline": "Emirates",
+    "flight": "EK504",
+    "origin": "DXB",
+    "destination": "BOM",
+    "miles": 1197,
+    "minutes": 180
+  },
+  {
+    "id": 9,
+    "date": "2022-01-23",
+    "airline": "Emirates",
+    "flight": "EK501",
+    "origin": "BOM",
+    "destination": "DXB",
+    "miles": 1197,
+    "minutes": 200
+  },
+  {
+    "id": 10,
+    "date": "2022-01-23",
+    "airline": "Emirates",
+    "flight": "EK229",
+    "origin": "DXB",
+    "destination": "SEA",
+    "miles": 7412,
+    "minutes": 880
+  },
+  {
+    "id": 11,
+    "date": "2022-05-11",
+    "airline": "Southwest",
+    "flight": "WN1670",
+    "origin": "SEA",
+    "destination": "LAS",
+    "miles": 867,
+    "minutes": 140
+  },
+  {
+    "id": 12,
+    "date": "2022-05-14",
+    "airline": "Southwest",
+    "flight": "WN2946",
+    "origin": "LAS",
+    "destination": "SEA",
+    "miles": 867,
+    "minutes": 170
+  },
+  {
+    "id": 13,
+    "date": "2022-06-16",
+    "airline": "American",
+    "flight": "AA7470",
+    "origin": "SEA",
+    "destination": "DEN",
+    "miles": 1022,
+    "minutes": 165
+  },
+  {
+    "id": 14,
+    "date": "2022-06-19",
+    "airline": "United",
+    "flight": "UA2651",
+    "origin": "DEN",
+    "destination": "SEA",
+    "miles": 1022,
+    "minutes": 180
+  },
+  {
+    "id": 15,
+    "date": "2023-07-01",
+    "airline": "Alaska Airlines",
+    "flight": "AS424",
+    "origin": "SEA",
+    "destination": "AUS",
+    "miles": 1769,
+    "minutes": 245
+  },
+  {
+    "id": 16,
+    "date": "2023-07-03",
+    "airline": "American",
+    "flight": "AA3819",
+    "origin": "AUS",
+    "destination": "MSY",
+    "miles": 443,
+    "minutes": 83
+  },
+  {
+    "id": 17,
+    "date": "2023-07-11",
+    "airline": "Alaska Airlines",
+    "flight": "AS489",
+    "origin": "MSY",
+    "destination": "SEA",
+    "miles": 2084,
+    "minutes": 302
+  },
+  {
+    "id": 18,
+    "date": "2023-08-24",
+    "airline": "Alaska Airlines",
+    "flight": "AS1313",
+    "origin": "SEA",
+    "destination": "SFO",
+    "miles": 679,
+    "minutes": 130
+  },
+  {
+    "id": 19,
+    "date": "2023-08-30",
+    "airline": "Alaska Airlines",
+    "flight": "AS1332",
+    "origin": "SFO",
+    "destination": "SEA",
+    "miles": 679,
+    "minutes": 133
+  },
+  {
+    "id": 20,
+    "date": "2024-03-13",
+    "airline": "Alaska Airlines",
+    "flight": "AS1440",
+    "origin": "SEA",
+    "destination": "CUN",
+    "miles": 2685,
+    "minutes": 356
+  },
+  {
+    "id": 21,
+    "date": "2024-03-18",
+    "airline": "Delta",
+    "flight": "DL604",
+    "origin": "CUN",
+    "destination": "SEA",
+    "miles": 2685,
+    "minutes": 409
+  },
+  {
+    "id": 22,
+    "date": "2024-04-12",
+    "airline": "Delta",
+    "flight": "DL1074",
+    "origin": "SEA",
+    "destination": "ORD",
+    "miles": 1716,
+    "minutes": 239
+  },
+  {
+    "id": 23,
+    "date": "2024-04-16",
+    "airline": "Delta",
+    "flight": "DL1376",
+    "origin": "ORD",
+    "destination": "SEA",
+    "miles": 1716,
+    "minutes": 284
+  },
+  {
+    "id": 24,
+    "date": "2024-08-11",
+    "airline": "Alaska Airlines",
+    "flight": "AS704",
+    "origin": "SEA",
+    "destination": "LAS",
+    "miles": 867,
+    "minutes": 156
+  },
+  {
+    "id": 25,
+    "date": "2024-08-15",
+    "airline": "Alaska Airlines",
+    "flight": "AS601",
+    "origin": "LAS",
+    "destination": "SEA",
+    "miles": 867,
+    "minutes": 157
+  },
+  {
+    "id": 26,
+    "date": "2024-11-14",
+    "airline": "Singapore Airlines",
+    "flight": "SQ27",
+    "origin": "SEA",
+    "destination": "SIN",
+    "miles": 8065,
+    "minutes": null
+  },
+  {
+    "id": 27,
+    "date": "2024-11-15",
+    "airline": "Singapore Airlines",
+    "flight": "SQ504",
+    "origin": "SIN",
+    "destination": "AMD",
+    "miles": 2582,
+    "minutes": null
+  },
+  {
+    "id": 28,
+    "date": "2024-12-27",
+    "airline": "Singapore Airlines",
+    "flight": "SQ505",
+    "origin": "AMD",
+    "destination": "SIN",
+    "miles": 2582,
+    "minutes": 330
+  },
+  {
+    "id": 29,
+    "date": "2024-12-28",
+    "airline": "Singapore Airlines",
+    "flight": "SQ28",
+    "origin": "SIN",
+    "destination": "SEA",
+    "miles": 8065,
+    "minutes": 850
+  },
+  {
+    "id": 30,
+    "date": "2025-03-04",
+    "airline": "Delta",
+    "flight": "DL508",
+    "origin": "SEA",
+    "destination": "IAD",
+    "miles": 2300,
+    "minutes": 300
+  },
+  {
+    "id": 31,
+    "date": "2025-03-09",
+    "airline": "Delta",
+    "flight": "DL1015",
+    "origin": "IAD",
+    "destination": "SEA",
+    "miles": 2300,
+    "minutes": 362
+  },
+  {
+    "id": 32,
+    "date": "2025-03-16",
+    "airline": "Alaska Airlines",
+    "flight": "AS1048",
+    "origin": "SEA",
+    "destination": "LAX",
+    "miles": 955,
+    "minutes": 170
+  },
+  {
+    "id": 33,
+    "date": "2025-03-18",
+    "airline": "Air Tahiti Nui",
+    "flight": "TN101",
+    "origin": "LAX",
+    "destination": "PPT",
+    "miles": 4109,
+    "minutes": 495
+  },
+  {
+    "id": 34,
+    "date": "2025-03-23",
+    "airline": "Air Tahiti Nui",
+    "flight": "TN52",
+    "origin": "PPT",
+    "destination": "SEA",
+    "miles": 4800,
+    "minutes": 555
+  },
+  {
+    "id": 35,
+    "date": "2025-06-09",
+    "airline": "Delta",
+    "flight": "DL474",
+    "origin": "SEA",
+    "destination": "BOS",
+    "miles": 2489,
+    "minutes": 325
+  },
+  {
+    "id": 36,
+    "date": "2025-06-16",
+    "airline": "Delta",
+    "flight": "DL688",
+    "origin": "JFK",
+    "destination": "SEA",
+    "miles": 2415,
+    "minutes": 399
+  },
+  {
+    "id": 37,
+    "date": "2025-08-28",
+    "airline": "Hawaiian",
+    "flight": "HA6798",
+    "origin": "SEA",
+    "destination": "MSY",
+    "miles": 2084,
+    "minutes": 278
+  },
+  {
+    "id": 38,
+    "date": "2025-09-07",
+    "airline": "Alaska Airlines",
+    "flight": "AS451",
+    "origin": "MSY",
+    "destination": "SEA",
+    "miles": 2084,
+    "minutes": 308
+  },
+  {
+    "id": 39,
+    "date": "2025-11-21",
+    "airline": "Frontier",
+    "flight": "F93696",
+    "origin": "PAE",
+    "destination": "LAS",
+    "miles": 894,
+    "minutes": 151
+  },
+  {
+    "id": 40,
+    "date": "2025-11-23",
+    "airline": "Delta",
+    "flight": "DL2880",
+    "origin": "LAS",
+    "destination": "SEA",
+    "miles": 867,
+    "minutes": 171
+  },
+  {
+    "id": 41,
+    "date": "2025-11-25",
+    "airline": "ANA",
+    "flight": "NH117",
+    "origin": "SEA",
+    "destination": "HND",
+    "miles": 4792,
+    "minutes": 635
+  },
+  {
+    "id": 42,
+    "date": "2025-12-06",
+    "airline": "ANA",
+    "flight": "NH118",
+    "origin": "HND",
+    "destination": "SEA",
+    "miles": 4792,
+    "minutes": 545
+  },
+  {
+    "id": 43,
+    "date": "2026-02-27",
+    "airline": "Delta",
+    "flight": "DL344",
+    "origin": "SEA",
+    "destination": "OGG",
+    "miles": 2640,
+    "minutes": 381
+  },
+  {
+    "id": 44,
+    "date": "2026-03-04",
+    "airline": "Alaska Airlines",
+    "flight": "AS8389",
+    "origin": "OGG",
+    "destination": "KOA",
+    "miles": 84,
+    "minutes": 35
+  },
+  {
+    "id": 45,
+    "date": "2026-03-31",
+    "airline": "American",
+    "flight": "AA6420",
+    "origin": "SEA",
+    "destination": "LAX",
+    "miles": 955,
+    "minutes": 186
+  },
+  {
+    "id": 46,
+    "date": "2026-03-31",
+    "airline": "Alaska Airlines",
+    "flight": "AS138",
+    "origin": "LAX",
+    "destination": "SFO",
+    "miles": 338,
+    "minutes": 89
+  },
+  {
+    "id": 47,
+    "date": "2026-04-05",
+    "airline": "Alaska Airlines",
+    "flight": "AS580",
+    "origin": "SFO",
+    "destination": "SEA",
+    "miles": 679,
+    "minutes": 137
+  },
+  {
+    "id": 48,
+    "date": "2026-05-01",
+    "airline": "Lufthansa",
+    "flight": "LH489",
+    "origin": "SEA",
+    "destination": "MUC",
+    "miles": 5268,
+    "minutes": 590
+  },
+  {
+    "id": 49,
+    "date": "2026-05-02",
+    "airline": "Lufthansa",
+    "flight": "LH1716",
+    "origin": "MUC",
+    "destination": "SPU",
+    "miles": 397,
+    "minutes": 80
+  },
+  {
+    "id": 50,
+    "date": "2026-05-08",
+    "airline": "Air Serbia",
+    "flight": "JU723",
+    "origin": "DBV",
+    "destination": "BEG",
+    "miles": 186,
+    "minutes": 60
+  },
+  {
+    "id": 51,
+    "date": "2026-05-08",
+    "airline": "Air Serbia",
+    "flight": "JU534",
+    "origin": "BEG",
+    "destination": "ATH",
+    "miles": 511,
+    "minutes": 95
+  },
+  {
+    "id": 52,
+    "date": "2026-05-10",
+    "airline": "Aegean",
+    "flight": "A3360",
+    "origin": "ATH",
+    "destination": "JTR",
+    "miles": 136,
+    "minutes": 50
+  },
+  {
+    "id": 53,
+    "date": "2026-05-13",
+    "airline": "Aegean",
+    "flight": "A3351",
+    "origin": "JTR",
+    "destination": "ATH",
+    "miles": 136,
+    "minutes": 45
+  },
+  {
+    "id": 54,
+    "date": "2026-05-13",
+    "airline": "American",
+    "flight": "AA161",
+    "origin": "ATH",
+    "destination": "ORD",
+    "miles": 5450,
+    "minutes": 710
+  },
+  {
+    "id": 55,
+    "date": "2026-05-13",
+    "airline": "American",
+    "flight": "AA2398",
+    "origin": "ORD",
+    "destination": "SEA",
+    "miles": 1716,
+    "minutes": 284
+  },
+  {
+    "id": 56,
+    "date": "2026-09-11",
+    "airline": "Alaska Airlines",
+    "flight": "AS1444",
+    "origin": "SEA",
+    "destination": "SJC",
+    "miles": 697,
+    "minutes": 134
+  },
+  {
+    "id": 57,
+    "date": "2026-09-14",
+    "airline": "Alaska Airlines",
+    "flight": "AS1304",
+    "origin": "SJC",
+    "destination": "SEA",
+    "miles": 697,
+    "minutes": 137
+  },
+  {
+    "id": 58,
+    "date": "2026-10-15",
+    "airline": "American",
+    "flight": "AA1471",
+    "origin": "SEA",
+    "destination": "MIA",
+    "miles": 2721,
+    "minutes": 343
+  },
+  {
+    "id": 59,
+    "date": "2026-10-16",
+    "airline": "American",
+    "flight": "AA1145",
+    "origin": "MIA",
+    "destination": "CTG",
+    "miles": 1106,
+    "minutes": 173
+  },
+  {
+    "id": 60,
+    "date": "2026-10-24",
+    "airline": "American",
+    "flight": "AA1144",
+    "origin": "CTG",
+    "destination": "MIA",
+    "miles": 1106,
+    "minutes": 183
+  },
+  {
+    "id": 61,
+    "date": "2026-10-24",
+    "airline": "American",
+    "flight": "AA3252",
+    "origin": "MIA",
+    "destination": "SEA",
+    "miles": 2721,
+    "minutes": 404
+  }
+]
