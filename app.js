@@ -32,6 +32,12 @@ function groupTrips(history){
  }
  return trips;
 }
+function tripColor(id){return `hsl(${Math.round((id*137.508)%360)} 58% 39%)`;}
+function highlightTrip(id){
+ mapLayer.selectAll('.route').classed('selected',g=>g.trip.id===id).classed('dimmed',g=>id!==null&&g.trip.id!==id);
+ if(id!==null)mapLayer.selectAll('.route').filter(g=>g.trip.id===id).raise();
+ document.querySelectorAll('.trip-key').forEach(button=>button.setAttribute('aria-pressed',String(Number(button.dataset.trip)===id)));
+}
 function tripRoute(legs){
  let route=legs[0].origin;
  let previous=legs[0].origin;
@@ -54,7 +60,7 @@ function renderJournal(data){
    const priced=trip.legs.filter(f=>f.price?.currency===currency);
    return priced.length?`${priced.some(f=>f.price.approximate)?'≈ ':''}${money(priced.reduce((sum,f)=>sum+f.price.legAmountCents,0),currency)}`:null;
   }).filter(Boolean);
-  const heading=document.createElement('tr');heading.className='trip-heading';
+  const heading=document.createElement('tr');heading.className='trip-heading';heading.style.setProperty('--trip-color',tripColor(trip.id));
   const dates=first.date===last.date?dateText(first.date):`${dateText(first.date)} – ${dateText(last.date)}`;
   heading.innerHTML=`<th colspan="6" scope="rowgroup"><div class="trip-summary"><div><span class="trip-dates">${dates}</span><strong>${tripRoute(trip.legs)}</strong><span class="trip-count">${partial?`${trip.visible.length} of ${trip.legs.length} flights match filters`:`${trip.legs.length} flight${trip.legs.length===1?'':'s'}`} · ${number(trip.visible.reduce((sum,f)=>sum+f.miles,0))} mi${partial?' shown':''}</span></div><div class="trip-price"><small>Total trip cost</small><b>${amounts.join(' + ')||'Price not recorded'}</b>${partial?'<small>Full trip, including hidden flights</small>':''}</div></div></th>`;
   rows.push(heading);
@@ -101,16 +107,40 @@ function render(){
 function renderMap(data,codes){
  if(!mapLayer)return;
  mapLayer.selectAll('.routes,.airports,.labels').remove();
- const groups=new Map();
- data.forEach(f=>{const key=[f.origin,f.destination].sort().join('-');if(!groups.has(key))groups.set(key,[]);groups.get(key).push(f);});
+ const selectedIds=new Set(data.map(f=>f.id));
+ const trips=groupTrips(flights).filter(trip=>trip.legs.some(f=>selectedIds.has(f.id)));
+ const groups=[];
+ for(const trip of trips){
+  const byRoute=new Map();
+  trip.legs.filter(f=>selectedIds.has(f.id)).forEach(f=>{
+   const key=[f.origin,f.destination].sort().join('-');
+   if(!byRoute.has(key))byRoute.set(key,{trip,legs:[]});
+   byRoute.get(key).legs.push(f);
+  });
+  groups.push(...byRoute.values());
+ }
  const routes=mapLayer.append('g').attr('class','routes');
- routes.selectAll('path').data([...groups.values()]).join('path').attr('class','route').attr('d',group=>path({type:'LineString',coordinates:[airports[group[0].origin].slice(1),airports[group[0].destination].slice(1)]})).on('click',function(event,group){
- event.stopPropagation();mapLayer.selectAll('.route').classed('selected',false);d3.select(this).classed('selected',true);
- $('map-detail').textContent=`${city(group[0].origin)} ↔ ${city(group[0].destination)} · ${group.length} flight${group.length===1?'':'s'} · ${number(group[0].miles)} mi each`;
- }).append('title').text(g=>`${g[0].origin} ↔ ${g[0].destination} · ${g.length} flights`);
+ routes.selectAll('path').data(groups).join('path').attr('class','route')
+ .style('stroke',g=>tripColor(g.trip.id))
+ .attr('d',g=>path({type:'LineString',coordinates:[airports[g.legs[0].origin].slice(1),airports[g.legs[0].destination].slice(1)]}))
+ .on('click',function(event,g){
+  event.stopPropagation();highlightTrip(g.trip.id);
+  $('map-detail').textContent=`${dateText(g.trip.legs[0].date)} · ${tripRoute(g.trip.legs)} · ${g.trip.legs.length} flights`;
+ }).append('title').text(g=>`${dateText(g.trip.legs[0].date)} · ${g.legs[0].origin} ↔ ${g.legs[0].destination} · ${g.legs.length} flights`);
+ $('trip-legend').replaceChildren(...trips.slice().reverse().map(trip=>{
+  const button=document.createElement('button');button.className='trip-key';button.dataset.trip=trip.id;button.setAttribute('aria-pressed','false');
+  const swatch=document.createElement('span');swatch.style.background=tripColor(trip.id);swatch.setAttribute('aria-hidden','true');
+  button.append(swatch,`${dateText(trip.legs[0].date)} · ${tripRoute(trip.legs)}`);
+  button.onclick=()=>{
+   const active=button.getAttribute('aria-pressed')==='true';highlightTrip(active?null:trip.id);
+   $('map-detail').textContent=active?'Select a trip below to highlight its routes':`${dateText(trip.legs[0].date)} · ${tripRoute(trip.legs)} · ${trip.legs.length} flights`;
+  };
+  return button;
+ }));
  mapLayer.append('g').attr('class','airports').selectAll('circle').data([...codes]).join('circle').attr('class','airport').attr('cx',c=>projection(airports[c].slice(1))[0]).attr('cy',c=>projection(airports[c].slice(1))[1]).attr('r',3).on('click',(event,c)=>{
  event.stopPropagation();const related=data.filter(f=>f.origin===c||f.destination===c);$('map-detail').textContent=`${city(c)} (${c}) · ${related.length} arrivals and departures`;
- mapLayer.selectAll('.route').classed('selected',g=>g.some(f=>f.origin===c||f.destination===c));
+ highlightTrip(null);
+ mapLayer.selectAll('.route').classed('selected',g=>g.legs.some(f=>f.origin===c||f.destination===c)).classed('dimmed',g=>!g.legs.some(f=>f.origin===c||f.destination===c));
  }).append('title').text(c=>`${city(c)} (${c})`);
  // Keep labels legible by avoiding overlapping text boxes.
  const occupied=[];const labels=rank(data.flatMap(f=>[f.origin,f.destination])).map(v=>v[0]).filter(c=>{
@@ -129,7 +159,7 @@ async function init(){
  mapLayer.append('path').datum(d3.geoGraticule10()).attr('class','graticule').attr('d',path);
  mapLayer.append('g').selectAll('path').data(topojson.feature(world,world.objects.countries).features).join('path').attr('class','land').attr('d',path);
  zoom=d3.zoom().scaleExtent([1,7]).translateExtent([[-200,-120],[1300,680]]).on('zoom',e=>mapLayer.attr('transform',e.transform));svg.call(zoom);
- $('reset-map').onclick=()=>{svg.transition().duration(350).call(zoom.transform,d3.zoomIdentity);mapLayer.selectAll('.route').classed('selected',false);$('map-detail').textContent='Select a route or airport to explore';};
+ $('reset-map').onclick=()=>{svg.transition().duration(350).call(zoom.transform,d3.zoomIdentity);highlightTrip(null);$('map-detail').textContent='Select a route or airport to explore';};
  $('search').addEventListener('input',e=>{query=e.target.value.trim().toLowerCase();render();});
  $('sort-date').onclick=()=>{descending=!descending;$('sort-date').textContent=`Trip date ${descending?'↓':'↑'}`;render();};
  render();
