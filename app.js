@@ -90,6 +90,7 @@ function render(){
  return priced.length?money(priced.reduce((sum,f)=>sum+f.price.legAmountCents,0),currency):null;
  }).filter(Boolean);
  const approximate=data.some(f=>f.price?.approximate);
+ $('stats').insertAdjacentHTML('beforeend',`<div class="stat stat-cost"><span class="stat-label">TOTAL TICKET COST</span><strong class="stat-value">${approximate?'≈ ':''}${totals.join(' <small>+</small> ')||(data.length?'Not recorded':'—')}</strong><span class="stat-note">${approximate?'Includes approximate fares · ':''}Samarth’s share · ${data.filter(f=>f.price).length} of ${data.length} flights priced</span></div>`);
  $('data-note').textContent=`Prices reflect Samarth’s share, with multi-leg booking totals split equally across legs (estimated). Any extra cent is assigned to the earliest legs. USD and INR are kept separate. Approximate source prices are marked ≈; sponsored flights cost $0. Ticket prices exclude extras. Completed flights only. Distances are great-circle estimates. Duration totals include available times${missing?`; ${missing} flight duration${missing===1?' is':'s are'} unknown`:''}.`;
  $('price-summary').textContent=`Ticket cost for selected flights: ${approximate?'≈ ':''}${totals.join(' + ')||'Not recorded'} · ${data.filter(f=>f.price).length} of ${data.length} flights priced`;
  $('empty').hidden=data.length>0;
