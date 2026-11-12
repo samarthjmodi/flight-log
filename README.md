@@ -8,7 +8,9 @@ Run `python3 -m http.server 8000` and open http://localhost:8000. Serve over HTT
 
 ## Data
 
-`assets/flights.json` holds the 61 completed flights. Statistics update with both year and search filters. Airline names are normalized, distances come from the source log, and durations count only recorded minutes (three are missing). Upcoming and cancelled flights are excluded. The site does not expose booking references, prices, or passenger details.
+`assets/flights.json` holds the 61 completed flights. Statistics update with both year and search filters. Airline names are normalized, distances come from the source log, and durations count only recorded minutes (three are missing). Upcoming and cancelled flights are excluded. The site does not expose booking references or passenger details.
+
+Ticket prices reflect Samarth’s share. Multi-leg booking totals are divided equally into integer cents, with any remainder assigned to the earliest legs; these are estimates rather than airline-provided per-leg fares. USD and INR are kept separate. Unknown prices remain null. The cost summary follows the active filters.
 
 To regenerate from the private, untracked `flight-history.md`, run `python3 scripts/build-data.py`. The original file is deliberately ignored by Git. You may also edit the public JSON directly.
 

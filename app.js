@@ -8,6 +8,13 @@ const number=n=>n.toLocaleString('en-US');
 const dateText=s=>new Date(s+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
 const duration=n=>n==null?'Not recorded':`${Math.floor(n/60)}h ${String(n%60).padStart(2,'0')}m`;
 const city=code=>airports[code][0];
+const money=(cents,currency)=>new Intl.NumberFormat('en-US',{style:'currency',currency,currencyDisplay:currency==='INR'?'code':'symbol'}).format(cents/100);
+function flightPrice(f){
+ if(!f.price)return '<span class="price-unknown">Not recorded</span>';
+ const p=f.price;
+ const label=p.legsInBooking>1?`Estimated · 1/${p.legsInBooking} of booking`:p.type==='Allocated'?'Allocated passenger share':'Confirmed';
+ return `${money(p.legAmountCents,p.currency)}<small>${label}</small>`;
+}
 function selected(){return flights.filter(f=>(year==='all'||f.date.startsWith(year))&&(!query||[f.airline,f.flight,f.origin,f.destination,city(f.origin),city(f.destination),f.date].join(' ').toLowerCase().includes(query)));}
 function rank(values){const counts=new Map();values.forEach(v=>counts.set(v,(counts.get(v)||0)+1));return [...counts].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]));}
 function render(){
@@ -27,10 +34,15 @@ function render(){
  $('airport-note').textContent=visits.length?`${visits[0][1]} arrivals and departures`:'No matching flights';
  $('home-code').textContent=visits[0]?.[0]||'—';
  $('flight-count').textContent=`(${data.length})`;
+ const totals=['USD','INR'].map(currency=>{
+ const priced=data.filter(f=>f.price?.currency===currency);
+ return priced.length?money(priced.reduce((sum,f)=>sum+f.price.legAmountCents,0),currency):null;
+ }).filter(Boolean);
+ $('price-summary').textContent=`Ticket cost for selected flights: ${totals.join(' + ')||'Not recorded'} · ${data.filter(f=>f.price).length} of ${data.length} flights priced`;
  $('empty').hidden=data.length>0;
  $('flight-rows').replaceChildren(...[...data].sort((a,b)=>(descending?-1:1)*(a.date.localeCompare(b.date)||a.id-b.id)).map(f=>{
  const tr=document.createElement('tr');
- tr.innerHTML=`<td>${dateText(f.date)}</td><td class="route-cell" title="${city(f.origin)} to ${city(f.destination)}">${f.origin}<span>→</span>${f.destination}</td><td class="airline-cell">${f.airline}<small>${f.flight==='Unknown'?'Flight number not recorded':f.flight}</small></td><td>${number(f.miles)} mi</td><td>${duration(f.minutes)}</td>`;
+ tr.innerHTML=`<td>${dateText(f.date)}</td><td class="route-cell" title="${city(f.origin)} to ${city(f.destination)}">${f.origin}<span>→</span>${f.destination}</td><td class="airline-cell">${f.airline}<small>${f.flight==='Unknown'?'Flight number not recorded':f.flight}</small></td><td>${number(f.miles)} mi</td><td>${duration(f.minutes)}</td><td class="price-cell">${flightPrice(f)}</td>`;
  return tr;
  }));
  $('map-detail').textContent=data.length?'Select a route or airport to explore':'No matching flights';

@@ -7,7 +7,8 @@
     "origin": "DEL",
     "destination": "STV",
     "miles": 582,
-    "minutes": null
+    "minutes": null,
+    "price": null
   },
   {
     "id": 2,
@@ -17,7 +18,15 @@
     "origin": "BOM",
     "destination": "SIN",
     "miles": 2437,
-    "minutes": 330
+    "minutes": 330,
+    "price": {
+      "firstFlightId": 2,
+      "amountCents": 4121600,
+      "currency": "INR",
+      "type": "Confirmed",
+      "legAmountCents": 2060800,
+      "legsInBooking": 2
+    }
   },
   {
     "id": 3,
@@ -27,7 +36,15 @@
     "origin": "SIN",
     "destination": "SEA",
     "miles": 8065,
-    "minutes": 880
+    "minutes": 880,
+    "price": {
+      "firstFlightId": 2,
+      "amountCents": 4121600,
+      "currency": "INR",
+      "type": "Confirmed",
+      "legAmountCents": 2060800,
+      "legsInBooking": 2
+    }
   },
   {
     "id": 4,
@@ -37,7 +54,8 @@
     "origin": "SEA",
     "destination": "SFO",
     "miles": 679,
-    "minutes": 136
+    "minutes": 136,
+    "price": null
   },
   {
     "id": 5,
@@ -47,7 +65,15 @@
     "origin": "SEA",
     "destination": "BOS",
     "miles": 2489,
-    "minutes": 326
+    "minutes": 326,
+    "price": {
+      "firstFlightId": 5,
+      "amountCents": 13840,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 13840,
+      "legsInBooking": 1
+    }
   },
   {
     "id": 6,
@@ -57,7 +83,15 @@
     "origin": "PHL",
     "destination": "SEA",
     "miles": 2372,
-    "minutes": 374
+    "minutes": 374,
+    "price": {
+      "firstFlightId": 6,
+      "amountCents": 19740,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 19740,
+      "legsInBooking": 1
+    }
   },
   {
     "id": 7,
@@ -67,7 +101,15 @@
     "origin": "SEA",
     "destination": "DXB",
     "miles": 7412,
-    "minutes": 875
+    "minutes": 875,
+    "price": {
+      "firstFlightId": 7,
+      "amountCents": 109364,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 27341,
+      "legsInBooking": 4
+    }
   },
   {
     "id": 8,
@@ -77,7 +119,15 @@
     "origin": "DXB",
     "destination": "BOM",
     "miles": 1197,
-    "minutes": 180
+    "minutes": 180,
+    "price": {
+      "firstFlightId": 7,
+      "amountCents": 109364,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 27341,
+      "legsInBooking": 4
+    }
   },
   {
     "id": 9,
@@ -87,7 +137,15 @@
     "origin": "BOM",
     "destination": "DXB",
     "miles": 1197,
-    "minutes": 200
+    "minutes": 200,
+    "price": {
+      "firstFlightId": 7,
+      "amountCents": 109364,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 27341,
+      "legsInBooking": 4
+    }
   },
   {
     "id": 10,
@@ -97,7 +155,15 @@
     "origin": "DXB",
     "destination": "SEA",
     "miles": 7412,
-    "minutes": 880
+    "minutes": 880,
+    "price": {
+      "firstFlightId": 7,
+      "amountCents": 109364,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 27341,
+      "legsInBooking": 4
+    }
   },
   {
     "id": 11,
@@ -107,7 +173,15 @@
     "origin": "SEA",
     "destination": "LAS",
     "miles": 867,
-    "minutes": 140
+    "minutes": 140,
+    "price": {
+      "firstFlightId": 11,
+      "amountCents": 26940,
+      "currency": "USD",
+      "type": "Allocated",
+      "legAmountCents": 13470,
+      "legsInBooking": 2
+    }
   },
   {
     "id": 12,
@@ -117,7 +191,15 @@
     "origin": "LAS",
     "destination": "SEA",
     "miles": 867,
-    "minutes": 170
+    "minutes": 170,
+    "price": {
+      "firstFlightId": 11,
+      "amountCents": 26940,
+      "currency": "USD",
+      "type": "Allocated",
+      "legAmountCents": 13470,
+      "legsInBooking": 2
+    }
   },
   {
     "id": 13,
@@ -127,7 +209,15 @@
     "origin": "SEA",
     "destination": "DEN",
     "miles": 1022,
-    "minutes": 165
+    "minutes": 165,
+    "price": {
+      "firstFlightId": 13,
+      "amountCents": 73720,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 36860,
+      "legsInBooking": 2
+    }
   },
   {
     "id": 14,
@@ -137,7 +227,15 @@
     "origin": "DEN",
     "destination": "SEA",
     "miles": 1022,
-    "minutes": 180
+    "minutes": 180,
+    "price": {
+      "firstFlightId": 13,
+      "amountCents": 73720,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 36860,
+      "legsInBooking": 2
+    }
   },
   {
     "id": 15,
@@ -147,7 +245,15 @@
     "origin": "SEA",
     "destination": "AUS",
     "miles": 1769,
-    "minutes": 245
+    "minutes": 245,
+    "price": {
+      "firstFlightId": 15,
+      "amountCents": 16890,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 16890,
+      "legsInBooking": 1
+    }
   },
   {
     "id": 16,
@@ -157,7 +263,15 @@
     "origin": "AUS",
     "destination": "MSY",
     "miles": 443,
-    "minutes": 83
+    "minutes": 83,
+    "price": {
+      "firstFlightId": 16,
+      "amountCents": 8390,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 8390,
+      "legsInBooking": 1
+    }
   },
   {
     "id": 17,
@@ -167,7 +281,15 @@
     "origin": "MSY",
     "destination": "SEA",
     "miles": 2084,
-    "minutes": 302
+    "minutes": 302,
+    "price": {
+      "firstFlightId": 17,
+      "amountCents": 12590,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 12590,
+      "legsInBooking": 1
+    }
   },
   {
     "id": 18,
@@ -177,7 +299,15 @@
     "origin": "SEA",
     "destination": "SFO",
     "miles": 679,
-    "minutes": 130
+    "minutes": 130,
+    "price": {
+      "firstFlightId": 18,
+      "amountCents": 27480,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 13740,
+      "legsInBooking": 2
+    }
   },
   {
     "id": 19,
@@ -187,7 +317,15 @@
     "origin": "SFO",
     "destination": "SEA",
     "miles": 679,
-    "minutes": 133
+    "minutes": 133,
+    "price": {
+      "firstFlightId": 18,
+      "amountCents": 27480,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 13740,
+      "legsInBooking": 2
+    }
   },
   {
     "id": 20,
@@ -197,7 +335,15 @@
     "origin": "SEA",
     "destination": "CUN",
     "miles": 2685,
-    "minutes": 356
+    "minutes": 356,
+    "price": {
+      "firstFlightId": 20,
+      "amountCents": 41932,
+      "currency": "USD",
+      "type": "Allocated",
+      "legAmountCents": 20966,
+      "legsInBooking": 2
+    }
   },
   {
     "id": 21,
@@ -207,7 +353,15 @@
     "origin": "CUN",
     "destination": "SEA",
     "miles": 2685,
-    "minutes": 409
+    "minutes": 409,
+    "price": {
+      "firstFlightId": 20,
+      "amountCents": 41932,
+      "currency": "USD",
+      "type": "Allocated",
+      "legAmountCents": 20966,
+      "legsInBooking": 2
+    }
   },
   {
     "id": 22,
@@ -217,7 +371,15 @@
     "origin": "SEA",
     "destination": "ORD",
     "miles": 1716,
-    "minutes": 239
+    "minutes": 239,
+    "price": {
+      "firstFlightId": 22,
+      "amountCents": 17168,
+      "currency": "USD",
+      "type": "Allocated",
+      "legAmountCents": 8584,
+      "legsInBooking": 2
+    }
   },
   {
     "id": 23,
@@ -227,7 +389,15 @@
     "origin": "ORD",
     "destination": "SEA",
     "miles": 1716,
-    "minutes": 284
+    "minutes": 284,
+    "price": {
+      "firstFlightId": 22,
+      "amountCents": 17168,
+      "currency": "USD",
+      "type": "Allocated",
+      "legAmountCents": 8584,
+      "legsInBooking": 2
+    }
   },
   {
     "id": 24,
@@ -237,7 +407,15 @@
     "origin": "SEA",
     "destination": "LAS",
     "miles": 867,
-    "minutes": 156
+    "minutes": 156,
+    "price": {
+      "firstFlightId": 24,
+      "amountCents": 15620,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 7810,
+      "legsInBooking": 2
+    }
   },
   {
     "id": 25,
@@ -247,7 +425,15 @@
     "origin": "LAS",
     "destination": "SEA",
     "miles": 867,
-    "minutes": 157
+    "minutes": 157,
+    "price": {
+      "firstFlightId": 24,
+      "amountCents": 15620,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 7810,
+      "legsInBooking": 2
+    }
   },
   {
     "id": 26,
@@ -257,7 +443,15 @@
     "origin": "SEA",
     "destination": "SIN",
     "miles": 8065,
-    "minutes": null
+    "minutes": null,
+    "price": {
+      "firstFlightId": 26,
+      "amountCents": 159145,
+      "currency": "USD",
+      "type": "Allocated",
+      "legAmountCents": 39787,
+      "legsInBooking": 4
+    }
   },
   {
     "id": 27,
@@ -267,7 +461,15 @@
     "origin": "SIN",
     "destination": "AMD",
     "miles": 2582,
-    "minutes": null
+    "minutes": null,
+    "price": {
+      "firstFlightId": 26,
+      "amountCents": 159145,
+      "currency": "USD",
+      "type": "Allocated",
+      "legAmountCents": 39786,
+      "legsInBooking": 4
+    }
   },
   {
     "id": 28,
@@ -277,7 +479,15 @@
     "origin": "AMD",
     "destination": "SIN",
     "miles": 2582,
-    "minutes": 330
+    "minutes": 330,
+    "price": {
+      "firstFlightId": 26,
+      "amountCents": 159145,
+      "currency": "USD",
+      "type": "Allocated",
+      "legAmountCents": 39786,
+      "legsInBooking": 4
+    }
   },
   {
     "id": 29,
@@ -287,7 +497,15 @@
     "origin": "SIN",
     "destination": "SEA",
     "miles": 8065,
-    "minutes": 850
+    "minutes": 850,
+    "price": {
+      "firstFlightId": 26,
+      "amountCents": 159145,
+      "currency": "USD",
+      "type": "Allocated",
+      "legAmountCents": 39786,
+      "legsInBooking": 4
+    }
   },
   {
     "id": 30,
@@ -297,7 +515,15 @@
     "origin": "SEA",
     "destination": "IAD",
     "miles": 2300,
-    "minutes": 300
+    "minutes": 300,
+    "price": {
+      "firstFlightId": 30,
+      "amountCents": 52297,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 26149,
+      "legsInBooking": 2
+    }
   },
   {
     "id": 31,
@@ -307,7 +533,15 @@
     "origin": "IAD",
     "destination": "SEA",
     "miles": 2300,
-    "minutes": 362
+    "minutes": 362,
+    "price": {
+      "firstFlightId": 30,
+      "amountCents": 52297,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 26148,
+      "legsInBooking": 2
+    }
   },
   {
     "id": 32,
@@ -317,7 +551,15 @@
     "origin": "SEA",
     "destination": "LAX",
     "miles": 955,
-    "minutes": 170
+    "minutes": 170,
+    "price": {
+      "firstFlightId": 32,
+      "amountCents": 95810,
+      "currency": "USD",
+      "type": "Allocated",
+      "legAmountCents": 31937,
+      "legsInBooking": 3
+    }
   },
   {
     "id": 33,
@@ -327,7 +569,15 @@
     "origin": "LAX",
     "destination": "PPT",
     "miles": 4109,
-    "minutes": 495
+    "minutes": 495,
+    "price": {
+      "firstFlightId": 32,
+      "amountCents": 95810,
+      "currency": "USD",
+      "type": "Allocated",
+      "legAmountCents": 31937,
+      "legsInBooking": 3
+    }
   },
   {
     "id": 34,
@@ -337,7 +587,15 @@
     "origin": "PPT",
     "destination": "SEA",
     "miles": 4800,
-    "minutes": 555
+    "minutes": 555,
+    "price": {
+      "firstFlightId": 32,
+      "amountCents": 95810,
+      "currency": "USD",
+      "type": "Allocated",
+      "legAmountCents": 31936,
+      "legsInBooking": 3
+    }
   },
   {
     "id": 35,
@@ -347,7 +605,15 @@
     "origin": "SEA",
     "destination": "BOS",
     "miles": 2489,
-    "minutes": 325
+    "minutes": 325,
+    "price": {
+      "firstFlightId": 35,
+      "amountCents": 29196,
+      "currency": "USD",
+      "type": "Allocated",
+      "legAmountCents": 14598,
+      "legsInBooking": 2
+    }
   },
   {
     "id": 36,
@@ -357,7 +623,15 @@
     "origin": "JFK",
     "destination": "SEA",
     "miles": 2415,
-    "minutes": 399
+    "minutes": 399,
+    "price": {
+      "firstFlightId": 35,
+      "amountCents": 29196,
+      "currency": "USD",
+      "type": "Allocated",
+      "legAmountCents": 14598,
+      "legsInBooking": 2
+    }
   },
   {
     "id": 37,
@@ -367,7 +641,15 @@
     "origin": "SEA",
     "destination": "MSY",
     "miles": 2084,
-    "minutes": 278
+    "minutes": 278,
+    "price": {
+      "firstFlightId": 37,
+      "amountCents": 28228,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 14114,
+      "legsInBooking": 2
+    }
   },
   {
     "id": 38,
@@ -377,7 +659,15 @@
     "origin": "MSY",
     "destination": "SEA",
     "miles": 2084,
-    "minutes": 308
+    "minutes": 308,
+    "price": {
+      "firstFlightId": 37,
+      "amountCents": 28228,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 14114,
+      "legsInBooking": 2
+    }
   },
   {
     "id": 39,
@@ -387,7 +677,15 @@
     "origin": "PAE",
     "destination": "LAS",
     "miles": 894,
-    "minutes": 151
+    "minutes": 151,
+    "price": {
+      "firstFlightId": 39,
+      "amountCents": 3398,
+      "currency": "USD",
+      "type": "Allocated",
+      "legAmountCents": 3398,
+      "legsInBooking": 1
+    }
   },
   {
     "id": 40,
@@ -397,7 +695,15 @@
     "origin": "LAS",
     "destination": "SEA",
     "miles": 867,
-    "minutes": 171
+    "minutes": 171,
+    "price": {
+      "firstFlightId": 40,
+      "amountCents": 19848,
+      "currency": "USD",
+      "type": "Allocated",
+      "legAmountCents": 19848,
+      "legsInBooking": 1
+    }
   },
   {
     "id": 41,
@@ -407,7 +713,15 @@
     "origin": "SEA",
     "destination": "HND",
     "miles": 4792,
-    "minutes": 635
+    "minutes": 635,
+    "price": {
+      "firstFlightId": 41,
+      "amountCents": 74231,
+      "currency": "USD",
+      "type": "Allocated",
+      "legAmountCents": 37116,
+      "legsInBooking": 2
+    }
   },
   {
     "id": 42,
@@ -417,7 +731,15 @@
     "origin": "HND",
     "destination": "SEA",
     "miles": 4792,
-    "minutes": 545
+    "minutes": 545,
+    "price": {
+      "firstFlightId": 41,
+      "amountCents": 74231,
+      "currency": "USD",
+      "type": "Allocated",
+      "legAmountCents": 37115,
+      "legsInBooking": 2
+    }
   },
   {
     "id": 43,
@@ -427,7 +749,15 @@
     "origin": "SEA",
     "destination": "OGG",
     "miles": 2640,
-    "minutes": 381
+    "minutes": 381,
+    "price": {
+      "firstFlightId": 43,
+      "amountCents": 26110,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 26110,
+      "legsInBooking": 1
+    }
   },
   {
     "id": 44,
@@ -437,7 +767,15 @@
     "origin": "OGG",
     "destination": "KOA",
     "miles": 84,
-    "minutes": 35
+    "minutes": 35,
+    "price": {
+      "firstFlightId": 44,
+      "amountCents": 3890,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 3890,
+      "legsInBooking": 1
+    }
   },
   {
     "id": 45,
@@ -447,7 +785,15 @@
     "origin": "SEA",
     "destination": "LAX",
     "miles": 955,
-    "minutes": 186
+    "minutes": 186,
+    "price": {
+      "firstFlightId": 45,
+      "amountCents": 14840,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 14840,
+      "legsInBooking": 1
+    }
   },
   {
     "id": 46,
@@ -457,7 +803,15 @@
     "origin": "LAX",
     "destination": "SFO",
     "miles": 338,
-    "minutes": 89
+    "minutes": 89,
+    "price": {
+      "firstFlightId": 46,
+      "amountCents": 12840,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 12840,
+      "legsInBooking": 1
+    }
   },
   {
     "id": 47,
@@ -467,7 +821,15 @@
     "origin": "SFO",
     "destination": "SEA",
     "miles": 679,
-    "minutes": 137
+    "minutes": 137,
+    "price": {
+      "firstFlightId": 47,
+      "amountCents": 16840,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 16840,
+      "legsInBooking": 1
+    }
   },
   {
     "id": 48,
@@ -477,7 +839,15 @@
     "origin": "SEA",
     "destination": "MUC",
     "miles": 5268,
-    "minutes": 590
+    "minutes": 590,
+    "price": {
+      "firstFlightId": 48,
+      "amountCents": 66705,
+      "currency": "USD",
+      "type": "Allocated",
+      "legAmountCents": 33353,
+      "legsInBooking": 2
+    }
   },
   {
     "id": 49,
@@ -487,7 +857,15 @@
     "origin": "MUC",
     "destination": "SPU",
     "miles": 397,
-    "minutes": 80
+    "minutes": 80,
+    "price": {
+      "firstFlightId": 48,
+      "amountCents": 66705,
+      "currency": "USD",
+      "type": "Allocated",
+      "legAmountCents": 33352,
+      "legsInBooking": 2
+    }
   },
   {
     "id": 50,
@@ -497,7 +875,15 @@
     "origin": "DBV",
     "destination": "BEG",
     "miles": 186,
-    "minutes": 60
+    "minutes": 60,
+    "price": {
+      "firstFlightId": 50,
+      "amountCents": 15550,
+      "currency": "USD",
+      "type": "Allocated",
+      "legAmountCents": 7775,
+      "legsInBooking": 2
+    }
   },
   {
     "id": 51,
@@ -507,7 +893,15 @@
     "origin": "BEG",
     "destination": "ATH",
     "miles": 511,
-    "minutes": 95
+    "minutes": 95,
+    "price": {
+      "firstFlightId": 50,
+      "amountCents": 15550,
+      "currency": "USD",
+      "type": "Allocated",
+      "legAmountCents": 7775,
+      "legsInBooking": 2
+    }
   },
   {
     "id": 52,
@@ -517,7 +911,15 @@
     "origin": "ATH",
     "destination": "JTR",
     "miles": 136,
-    "minutes": 50
+    "minutes": 50,
+    "price": {
+      "firstFlightId": 52,
+      "amountCents": 12610,
+      "currency": "USD",
+      "type": "Allocated",
+      "legAmountCents": 12610,
+      "legsInBooking": 1
+    }
   },
   {
     "id": 53,
@@ -527,7 +929,15 @@
     "origin": "JTR",
     "destination": "ATH",
     "miles": 136,
-    "minutes": 45
+    "minutes": 45,
+    "price": {
+      "firstFlightId": 53,
+      "amountCents": 15130,
+      "currency": "USD",
+      "type": "Allocated",
+      "legAmountCents": 15130,
+      "legsInBooking": 1
+    }
   },
   {
     "id": 54,
@@ -537,7 +947,15 @@
     "origin": "ATH",
     "destination": "ORD",
     "miles": 5450,
-    "minutes": 710
+    "minutes": 710,
+    "price": {
+      "firstFlightId": 54,
+      "amountCents": 65403,
+      "currency": "USD",
+      "type": "Allocated",
+      "legAmountCents": 32702,
+      "legsInBooking": 2
+    }
   },
   {
     "id": 55,
@@ -547,7 +965,15 @@
     "origin": "ORD",
     "destination": "SEA",
     "miles": 1716,
-    "minutes": 284
+    "minutes": 284,
+    "price": {
+      "firstFlightId": 54,
+      "amountCents": 65403,
+      "currency": "USD",
+      "type": "Allocated",
+      "legAmountCents": 32701,
+      "legsInBooking": 2
+    }
   },
   {
     "id": 56,
@@ -557,7 +983,15 @@
     "origin": "SEA",
     "destination": "SJC",
     "miles": 697,
-    "minutes": 134
+    "minutes": 134,
+    "price": {
+      "firstFlightId": 56,
+      "amountCents": 15679,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 7840,
+      "legsInBooking": 2
+    }
   },
   {
     "id": 57,
@@ -567,7 +1001,15 @@
     "origin": "SJC",
     "destination": "SEA",
     "miles": 697,
-    "minutes": 137
+    "minutes": 137,
+    "price": {
+      "firstFlightId": 56,
+      "amountCents": 15679,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 7839,
+      "legsInBooking": 2
+    }
   },
   {
     "id": 58,
@@ -577,7 +1019,15 @@
     "origin": "SEA",
     "destination": "MIA",
     "miles": 2721,
-    "minutes": 343
+    "minutes": 343,
+    "price": {
+      "firstFlightId": 58,
+      "amountCents": 78673,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 19669,
+      "legsInBooking": 4
+    }
   },
   {
     "id": 59,
@@ -587,7 +1037,15 @@
     "origin": "MIA",
     "destination": "CTG",
     "miles": 1106,
-    "minutes": 173
+    "minutes": 173,
+    "price": {
+      "firstFlightId": 58,
+      "amountCents": 78673,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 19668,
+      "legsInBooking": 4
+    }
   },
   {
     "id": 60,
@@ -597,7 +1055,15 @@
     "origin": "CTG",
     "destination": "MIA",
     "miles": 1106,
-    "minutes": 183
+    "minutes": 183,
+    "price": {
+      "firstFlightId": 58,
+      "amountCents": 78673,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 19668,
+      "legsInBooking": 4
+    }
   },
   {
     "id": 61,
@@ -607,6 +1073,14 @@
     "origin": "MIA",
     "destination": "SEA",
     "miles": 2721,
-    "minutes": 404
+    "minutes": 404,
+    "price": {
+      "firstFlightId": 58,
+      "amountCents": 78673,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 19668,
+      "legsInBooking": 4
+    }
   }
 ]
