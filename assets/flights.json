@@ -7,8 +7,17 @@
     "origin": "DEL",
     "destination": "STV",
     "miles": 582,
-    "minutes": null,
-    "price": null
+    "minutes": 90,
+    "price": {
+      "firstFlightId": 1,
+      "amountCents": 250000,
+      "currency": "INR",
+      "type": "Confirmed (user-provided, approx)",
+      "legAmountCents": 250000,
+      "legsInBooking": 1,
+      "approximate": true
+    },
+    "durationApproximate": true
   },
   {
     "id": 2,
@@ -25,7 +34,8 @@
       "currency": "INR",
       "type": "Confirmed",
       "legAmountCents": 2060800,
-      "legsInBooking": 2
+      "legsInBooking": 2,
+      "approximate": false
     }
   },
   {
@@ -43,7 +53,8 @@
       "currency": "INR",
       "type": "Confirmed",
       "legAmountCents": 2060800,
-      "legsInBooking": 2
+      "legsInBooking": 2,
+      "approximate": false
     }
   },
   {
@@ -55,10 +66,94 @@
     "destination": "SFO",
     "miles": 679,
     "minutes": 136,
-    "price": null
+    "price": {
+      "firstFlightId": 4,
+      "amountCents": 0,
+      "currency": "USD",
+      "type": "Sponsored \u2014 $0",
+      "legAmountCents": 0,
+      "legsInBooking": 1,
+      "approximate": false
+    }
   },
   {
     "id": 5,
+    "date": "2020-12-08",
+    "airline": "Lufthansa",
+    "flight": "LH491",
+    "origin": "SEA",
+    "destination": "FRA",
+    "miles": 5093,
+    "minutes": 615,
+    "price": {
+      "firstFlightId": 5,
+      "amountCents": 80697,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 20175,
+      "legsInBooking": 4,
+      "approximate": false
+    }
+  },
+  {
+    "id": 6,
+    "date": "2020-12-09",
+    "airline": "Lufthansa",
+    "flight": "LH756",
+    "origin": "FRA",
+    "destination": "BOM",
+    "miles": 4082,
+    "minutes": 500,
+    "price": {
+      "firstFlightId": 5,
+      "amountCents": 80697,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 20174,
+      "legsInBooking": 4,
+      "approximate": false
+    }
+  },
+  {
+    "id": 7,
+    "date": "2021-01-05",
+    "airline": "Lufthansa",
+    "flight": "LH757",
+    "origin": "BOM",
+    "destination": "FRA",
+    "miles": 4082,
+    "minutes": 565,
+    "price": {
+      "firstFlightId": 5,
+      "amountCents": 80697,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 20174,
+      "legsInBooking": 4,
+      "approximate": false
+    }
+  },
+  {
+    "id": 8,
+    "date": "2021-01-05",
+    "airline": "Lufthansa",
+    "flight": "LH490",
+    "origin": "FRA",
+    "destination": "SEA",
+    "miles": 5093,
+    "minutes": 645,
+    "price": {
+      "firstFlightId": 5,
+      "amountCents": 80697,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 20174,
+      "legsInBooking": 4,
+      "approximate": false
+    }
+  },
+  {
+    "id": 9,
     "date": "2021-06-11",
     "airline": "Delta",
     "flight": "DL2443",
@@ -67,16 +162,17 @@
     "miles": 2489,
     "minutes": 326,
     "price": {
-      "firstFlightId": 5,
+      "firstFlightId": 9,
       "amountCents": 13840,
       "currency": "USD",
       "type": "Confirmed",
       "legAmountCents": 13840,
-      "legsInBooking": 1
+      "legsInBooking": 1,
+      "approximate": false
     }
   },
   {
-    "id": 6,
+    "id": 10,
     "date": "2021-06-19",
     "airline": "American",
     "flight": "AA2001",
@@ -85,16 +181,17 @@
     "miles": 2372,
     "minutes": 374,
     "price": {
-      "firstFlightId": 6,
+      "firstFlightId": 10,
       "amountCents": 19740,
       "currency": "USD",
       "type": "Confirmed",
       "legAmountCents": 19740,
-      "legsInBooking": 1
+      "legsInBooking": 1,
+      "approximate": false
     }
   },
   {
-    "id": 7,
+    "id": 11,
     "date": "2021-12-24",
     "airline": "Emirates",
     "flight": "EK230",
@@ -103,16 +200,17 @@
     "miles": 7412,
     "minutes": 875,
     "price": {
-      "firstFlightId": 7,
+      "firstFlightId": 11,
       "amountCents": 109364,
       "currency": "USD",
       "type": "Confirmed",
       "legAmountCents": 27341,
-      "legsInBooking": 4
+      "legsInBooking": 4,
+      "approximate": false
     }
   },
   {
-    "id": 8,
+    "id": 12,
     "date": "2021-12-26",
     "airline": "Emirates",
     "flight": "EK504",
@@ -121,16 +219,17 @@
     "miles": 1197,
     "minutes": 180,
     "price": {
-      "firstFlightId": 7,
+      "firstFlightId": 11,
       "amountCents": 109364,
       "currency": "USD",
       "type": "Confirmed",
       "legAmountCents": 27341,
-      "legsInBooking": 4
+      "legsInBooking": 4,
+      "approximate": false
     }
   },
   {
-    "id": 9,
+    "id": 13,
     "date": "2022-01-23",
     "airline": "Emirates",
     "flight": "EK501",
@@ -139,16 +238,17 @@
     "miles": 1197,
     "minutes": 200,
     "price": {
-      "firstFlightId": 7,
+      "firstFlightId": 11,
       "amountCents": 109364,
       "currency": "USD",
       "type": "Confirmed",
       "legAmountCents": 27341,
-      "legsInBooking": 4
+      "legsInBooking": 4,
+      "approximate": false
     }
   },
   {
-    "id": 10,
+    "id": 14,
     "date": "2022-01-23",
     "airline": "Emirates",
     "flight": "EK229",
@@ -157,16 +257,17 @@
     "miles": 7412,
     "minutes": 880,
     "price": {
-      "firstFlightId": 7,
+      "firstFlightId": 11,
       "amountCents": 109364,
       "currency": "USD",
       "type": "Confirmed",
       "legAmountCents": 27341,
-      "legsInBooking": 4
+      "legsInBooking": 4,
+      "approximate": false
     }
   },
   {
-    "id": 11,
+    "id": 15,
     "date": "2022-05-11",
     "airline": "Southwest",
     "flight": "WN1670",
@@ -175,16 +276,17 @@
     "miles": 867,
     "minutes": 140,
     "price": {
-      "firstFlightId": 11,
+      "firstFlightId": 15,
       "amountCents": 26940,
       "currency": "USD",
       "type": "Allocated",
       "legAmountCents": 13470,
-      "legsInBooking": 2
+      "legsInBooking": 2,
+      "approximate": false
     }
   },
   {
-    "id": 12,
+    "id": 16,
     "date": "2022-05-14",
     "airline": "Southwest",
     "flight": "WN2946",
@@ -193,52 +295,169 @@
     "miles": 867,
     "minutes": 170,
     "price": {
-      "firstFlightId": 11,
+      "firstFlightId": 15,
       "amountCents": 26940,
       "currency": "USD",
       "type": "Allocated",
       "legAmountCents": 13470,
-      "legsInBooking": 2
+      "legsInBooking": 2,
+      "approximate": false
     }
   },
   {
-    "id": 13,
-    "date": "2022-06-16",
-    "airline": "American",
-    "flight": "AA7470",
-    "origin": "SEA",
-    "destination": "DEN",
-    "miles": 1022,
-    "minutes": 165,
-    "price": {
-      "firstFlightId": 13,
-      "amountCents": 73720,
-      "currency": "USD",
-      "type": "Confirmed",
-      "legAmountCents": 36860,
-      "legsInBooking": 2
-    }
-  },
-  {
-    "id": 14,
-    "date": "2022-06-19",
+    "id": 17,
+    "date": "2022-09-11",
     "airline": "United",
-    "flight": "UA2651",
-    "origin": "DEN",
-    "destination": "SEA",
-    "miles": 1022,
-    "minutes": 180,
+    "flight": "UA2499",
+    "origin": "SEA",
+    "destination": "SFO",
+    "miles": 679,
+    "minutes": 131,
     "price": {
-      "firstFlightId": 13,
-      "amountCents": 73720,
+      "firstFlightId": 17,
+      "amountCents": 77220,
       "currency": "USD",
       "type": "Confirmed",
-      "legAmountCents": 36860,
-      "legsInBooking": 2
+      "legAmountCents": 19305,
+      "legsInBooking": 4,
+      "approximate": false
     }
   },
   {
-    "id": 15,
+    "id": 18,
+    "date": "2022-09-11",
+    "airline": "United",
+    "flight": "UA1529",
+    "origin": "SFO",
+    "destination": "SAT",
+    "miles": 1480,
+    "minutes": 211,
+    "price": {
+      "firstFlightId": 17,
+      "amountCents": 77220,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 19305,
+      "legsInBooking": 4,
+      "approximate": false
+    }
+  },
+  {
+    "id": 19,
+    "date": "2022-09-18",
+    "airline": "United",
+    "flight": "UA2451",
+    "origin": "SAT",
+    "destination": "SFO",
+    "miles": 1480,
+    "minutes": 228,
+    "price": {
+      "firstFlightId": 17,
+      "amountCents": 77220,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 19305,
+      "legsInBooking": 4,
+      "approximate": false
+    }
+  },
+  {
+    "id": 20,
+    "date": "2022-09-18",
+    "airline": "United",
+    "flight": "UA2315",
+    "origin": "SFO",
+    "destination": "SEA",
+    "miles": 679,
+    "minutes": 140,
+    "price": {
+      "firstFlightId": 17,
+      "amountCents": 77220,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 19305,
+      "legsInBooking": 4,
+      "approximate": false
+    }
+  },
+  {
+    "id": 21,
+    "date": "2022-11-04",
+    "airline": "United",
+    "flight": "UA2207",
+    "origin": "SEA",
+    "destination": "IAH",
+    "miles": 1872,
+    "minutes": 248,
+    "price": {
+      "firstFlightId": 21,
+      "amountCents": 43020,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 10755,
+      "legsInBooking": 4,
+      "approximate": false
+    }
+  },
+  {
+    "id": 22,
+    "date": "2022-11-04",
+    "airline": "United",
+    "flight": "UA2040",
+    "origin": "IAH",
+    "destination": "MSY",
+    "miles": 304,
+    "minutes": 70,
+    "price": {
+      "firstFlightId": 21,
+      "amountCents": 43020,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 10755,
+      "legsInBooking": 4,
+      "approximate": false
+    }
+  },
+  {
+    "id": 23,
+    "date": "2022-11-12",
+    "airline": "United",
+    "flight": "UA1687",
+    "origin": "MSY",
+    "destination": "SFO",
+    "miles": 1908,
+    "minutes": 295,
+    "price": {
+      "firstFlightId": 21,
+      "amountCents": 43020,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 10755,
+      "legsInBooking": 4,
+      "approximate": false
+    }
+  },
+  {
+    "id": 24,
+    "date": "2022-11-19",
+    "airline": "United",
+    "flight": "UA447",
+    "origin": "SFO",
+    "destination": "SEA",
+    "miles": 679,
+    "minutes": 140,
+    "price": {
+      "firstFlightId": 21,
+      "amountCents": 43020,
+      "currency": "USD",
+      "type": "Confirmed",
+      "legAmountCents": 10755,
+      "legsInBooking": 4,
+      "approximate": false
+    }
+  },
+  {
+    "id": 25,
     "date": "2023-07-01",
     "airline": "Alaska Airlines",
     "flight": "AS424",
@@ -247,16 +466,17 @@
     "miles": 1769,
     "minutes": 245,
     "price": {
-      "firstFlightId": 15,
+      "firstFlightId": 25,
       "amountCents": 16890,
       "currency": "USD",
       "type": "Confirmed",
       "legAmountCents": 16890,
-      "legsInBooking": 1
+      "legsInBooking": 1,
+      "approximate": false
     }
   },
   {
-    "id": 16,
+    "id": 26,
     "date": "2023-07-03",
     "airline": "American",
     "flight": "AA3819",
@@ -265,16 +485,17 @@
     "miles": 443,
     "minutes": 83,
     "price": {
-      "firstFlightId": 16,
+      "firstFlightId": 26,
       "amountCents": 8390,
       "currency": "USD",
       "type": "Confirmed",
       "legAmountCents": 8390,
-      "legsInBooking": 1
+      "legsInBooking": 1,
+      "approximate": false
     }
   },
   {
-    "id": 17,
+    "id": 27,
     "date": "2023-07-11",
     "airline": "Alaska Airlines",
     "flight": "AS489",
@@ -283,16 +504,17 @@
     "miles": 2084,
     "minutes": 302,
     "price": {
-      "firstFlightId": 17,
+      "firstFlightId": 27,
       "amountCents": 12590,
       "currency": "USD",
       "type": "Confirmed",
       "legAmountCents": 12590,
-      "legsInBooking": 1
+      "legsInBooking": 1,
+      "approximate": false
     }
   },
   {
-    "id": 18,
+    "id": 28,
     "date": "2023-08-24",
     "airline": "Alaska Airlines",
     "flight": "AS1313",
@@ -301,16 +523,17 @@
     "miles": 679,
     "minutes": 130,
     "price": {
-      "firstFlightId": 18,
+      "firstFlightId": 28,
       "amountCents": 27480,
       "currency": "USD",
       "type": "Confirmed",
       "legAmountCents": 13740,
-      "legsInBooking": 2
+      "legsInBooking": 2,
+      "approximate": false
     }
   },
   {
-    "id": 19,
+    "id": 29,
     "date": "2023-08-30",
     "airline": "Alaska Airlines",
     "flight": "AS1332",
@@ -319,16 +542,17 @@
     "miles": 679,
     "minutes": 133,
     "price": {
-      "firstFlightId": 18,
+      "firstFlightId": 28,
       "amountCents": 27480,
       "currency": "USD",
       "type": "Confirmed",
       "legAmountCents": 13740,
-      "legsInBooking": 2
+      "legsInBooking": 2,
+      "approximate": false
     }
   },
   {
-    "id": 20,
+    "id": 30,
     "date": "2024-03-13",
     "airline": "Alaska Airlines",
     "flight": "AS1440",
@@ -337,16 +561,17 @@
     "miles": 2685,
     "minutes": 356,
     "price": {
-      "firstFlightId": 20,
+      "firstFlightId": 30,
       "amountCents": 41932,
       "currency": "USD",
       "type": "Allocated",
       "legAmountCents": 20966,
-      "legsInBooking": 2
+      "legsInBooking": 2,
+      "approximate": false
     }
   },
   {
-    "id": 21,
+    "id": 31,
     "date": "2024-03-18",
     "airline": "Delta",
     "flight": "DL604",
@@ -355,52 +580,57 @@
     "miles": 2685,
     "minutes": 409,
     "price": {
-      "firstFlightId": 20,
+      "firstFlightId": 30,
       "amountCents": 41932,
       "currency": "USD",
       "type": "Allocated",
       "legAmountCents": 20966,
-      "legsInBooking": 2
+      "legsInBooking": 2,
+      "approximate": false
     }
   },
   {
-    "id": 22,
-    "date": "2024-04-12",
-    "airline": "Delta",
-    "flight": "DL1074",
+    "id": 32,
+    "date": "2024-04-10",
+    "airline": "Alaska Airlines",
+    "flight": "AS642",
     "origin": "SEA",
-    "destination": "ORD",
-    "miles": 1716,
-    "minutes": 239,
+    "destination": "DEN",
+    "miles": 1022,
+    "minutes": 159,
     "price": {
-      "firstFlightId": 22,
-      "amountCents": 17168,
+      "firstFlightId": 32,
+      "amountCents": 16720,
       "currency": "USD",
-      "type": "Allocated",
-      "legAmountCents": 8584,
-      "legsInBooking": 2
-    }
+      "type": "Confirmed",
+      "legAmountCents": 8360,
+      "legsInBooking": 2,
+      "approximate": false
+    },
+    "note": "Itinerary assumed from a fellow traveler; ticket price confirmed by Samarth"
   },
   {
-    "id": 23,
+    "id": 33,
     "date": "2024-04-16",
-    "airline": "Delta",
-    "flight": "DL1376",
-    "origin": "ORD",
+    "airline": "Alaska Airlines",
+    "flight": "AS617",
+    "origin": "DEN",
     "destination": "SEA",
-    "miles": 1716,
-    "minutes": 284,
+    "miles": 1022,
+    "minutes": 174,
     "price": {
-      "firstFlightId": 22,
-      "amountCents": 17168,
+      "firstFlightId": 32,
+      "amountCents": 16720,
       "currency": "USD",
-      "type": "Allocated",
-      "legAmountCents": 8584,
-      "legsInBooking": 2
-    }
+      "type": "Confirmed",
+      "legAmountCents": 8360,
+      "legsInBooking": 2,
+      "approximate": false
+    },
+    "note": "Itinerary assumed from a fellow traveler; ticket price confirmed by Samarth"
   },
   {
-    "id": 24,
+    "id": 34,
     "date": "2024-08-11",
     "airline": "Alaska Airlines",
     "flight": "AS704",
@@ -409,16 +639,17 @@
     "miles": 867,
     "minutes": 156,
     "price": {
-      "firstFlightId": 24,
+      "firstFlightId": 34,
       "amountCents": 15620,
       "currency": "USD",
       "type": "Confirmed",
       "legAmountCents": 7810,
-      "legsInBooking": 2
+      "legsInBooking": 2,
+      "approximate": false
     }
   },
   {
-    "id": 25,
+    "id": 35,
     "date": "2024-08-15",
     "airline": "Alaska Airlines",
     "flight": "AS601",
@@ -427,52 +658,55 @@
     "miles": 867,
     "minutes": 157,
     "price": {
-      "firstFlightId": 24,
+      "firstFlightId": 34,
       "amountCents": 15620,
       "currency": "USD",
       "type": "Confirmed",
       "legAmountCents": 7810,
-      "legsInBooking": 2
+      "legsInBooking": 2,
+      "approximate": false
     }
   },
   {
-    "id": 26,
+    "id": 36,
     "date": "2024-11-14",
     "airline": "Singapore Airlines",
     "flight": "SQ27",
     "origin": "SEA",
     "destination": "SIN",
     "miles": 8065,
-    "minutes": null,
+    "minutes": 1020,
     "price": {
-      "firstFlightId": 26,
+      "firstFlightId": 36,
       "amountCents": 159145,
       "currency": "USD",
       "type": "Allocated",
       "legAmountCents": 39787,
-      "legsInBooking": 4
+      "legsInBooking": 4,
+      "approximate": false
     }
   },
   {
-    "id": 27,
+    "id": 37,
     "date": "2024-11-15",
     "airline": "Singapore Airlines",
     "flight": "SQ504",
     "origin": "SIN",
     "destination": "AMD",
     "miles": 2582,
-    "minutes": null,
+    "minutes": 340,
     "price": {
-      "firstFlightId": 26,
+      "firstFlightId": 36,
       "amountCents": 159145,
       "currency": "USD",
       "type": "Allocated",
       "legAmountCents": 39786,
-      "legsInBooking": 4
+      "legsInBooking": 4,
+      "approximate": false
     }
   },
   {
-    "id": 28,
+    "id": 38,
     "date": "2024-12-27",
     "airline": "Singapore Airlines",
     "flight": "SQ505",
@@ -481,16 +715,17 @@
     "miles": 2582,
     "minutes": 330,
     "price": {
-      "firstFlightId": 26,
+      "firstFlightId": 36,
       "amountCents": 159145,
       "currency": "USD",
       "type": "Allocated",
       "legAmountCents": 39786,
-      "legsInBooking": 4
+      "legsInBooking": 4,
+      "approximate": false
     }
   },
   {
-    "id": 29,
+    "id": 39,
     "date": "2024-12-28",
     "airline": "Singapore Airlines",
     "flight": "SQ28",
@@ -499,16 +734,17 @@
     "miles": 8065,
     "minutes": 850,
     "price": {
-      "firstFlightId": 26,
+      "firstFlightId": 36,
       "amountCents": 159145,
       "currency": "USD",
       "type": "Allocated",
       "legAmountCents": 39786,
-      "legsInBooking": 4
+      "legsInBooking": 4,
+      "approximate": false
     }
   },
   {
-    "id": 30,
+    "id": 40,
     "date": "2025-03-04",
     "airline": "Delta",
     "flight": "DL508",
@@ -517,16 +753,17 @@
     "miles": 2300,
     "minutes": 300,
     "price": {
-      "firstFlightId": 30,
+      "firstFlightId": 40,
       "amountCents": 52297,
       "currency": "USD",
       "type": "Confirmed",
       "legAmountCents": 26149,
-      "legsInBooking": 2
+      "legsInBooking": 2,
+      "approximate": false
     }
   },
   {
-    "id": 31,
+    "id": 41,
     "date": "2025-03-09",
     "airline": "Delta",
     "flight": "DL1015",
@@ -535,16 +772,17 @@
     "miles": 2300,
     "minutes": 362,
     "price": {
-      "firstFlightId": 30,
+      "firstFlightId": 40,
       "amountCents": 52297,
       "currency": "USD",
       "type": "Confirmed",
       "legAmountCents": 26148,
-      "legsInBooking": 2
+      "legsInBooking": 2,
+      "approximate": false
     }
   },
   {
-    "id": 32,
+    "id": 42,
     "date": "2025-03-16",
     "airline": "Alaska Airlines",
     "flight": "AS1048",
@@ -553,16 +791,17 @@
     "miles": 955,
     "minutes": 170,
     "price": {
-      "firstFlightId": 32,
+      "firstFlightId": 42,
       "amountCents": 95810,
       "currency": "USD",
       "type": "Allocated",
       "legAmountCents": 31937,
-      "legsInBooking": 3
+      "legsInBooking": 3,
+      "approximate": false
     }
   },
   {
-    "id": 33,
+    "id": 43,
     "date": "2025-03-18",
     "airline": "Air Tahiti Nui",
     "flight": "TN101",
@@ -571,16 +810,17 @@
     "miles": 4109,
     "minutes": 495,
     "price": {
-      "firstFlightId": 32,
+      "firstFlightId": 42,
       "amountCents": 95810,
       "currency": "USD",
       "type": "Allocated",
       "legAmountCents": 31937,
-      "legsInBooking": 3
+      "legsInBooking": 3,
+      "approximate": false
     }
   },
   {
-    "id": 34,
+    "id": 44,
     "date": "2025-03-23",
     "airline": "Air Tahiti Nui",
     "flight": "TN52",
@@ -589,16 +829,17 @@
     "miles": 4800,
     "minutes": 555,
     "price": {
-      "firstFlightId": 32,
+      "firstFlightId": 42,
       "amountCents": 95810,
       "currency": "USD",
       "type": "Allocated",
       "legAmountCents": 31936,
-      "legsInBooking": 3
+      "legsInBooking": 3,
+      "approximate": false
     }
   },
   {
-    "id": 35,
+    "id": 45,
     "date": "2025-06-09",
     "airline": "Delta",
     "flight": "DL474",
@@ -607,16 +848,17 @@
     "miles": 2489,
     "minutes": 325,
     "price": {
-      "firstFlightId": 35,
+      "firstFlightId": 45,
       "amountCents": 29196,
       "currency": "USD",
       "type": "Allocated",
       "legAmountCents": 14598,
-      "legsInBooking": 2
+      "legsInBooking": 2,
+      "approximate": false
     }
   },
   {
-    "id": 36,
+    "id": 46,
     "date": "2025-06-16",
     "airline": "Delta",
     "flight": "DL688",
@@ -625,16 +867,17 @@
     "miles": 2415,
     "minutes": 399,
     "price": {
-      "firstFlightId": 35,
+      "firstFlightId": 45,
       "amountCents": 29196,
       "currency": "USD",
       "type": "Allocated",
       "legAmountCents": 14598,
-      "legsInBooking": 2
+      "legsInBooking": 2,
+      "approximate": false
     }
   },
   {
-    "id": 37,
+    "id": 47,
     "date": "2025-08-28",
     "airline": "Hawaiian",
     "flight": "HA6798",
@@ -643,16 +886,17 @@
     "miles": 2084,
     "minutes": 278,
     "price": {
-      "firstFlightId": 37,
+      "firstFlightId": 47,
       "amountCents": 28228,
       "currency": "USD",
       "type": "Confirmed",
       "legAmountCents": 14114,
-      "legsInBooking": 2
+      "legsInBooking": 2,
+      "approximate": false
     }
   },
   {
-    "id": 38,
+    "id": 48,
     "date": "2025-09-07",
     "airline": "Alaska Airlines",
     "flight": "AS451",
@@ -661,52 +905,17 @@
     "miles": 2084,
     "minutes": 308,
     "price": {
-      "firstFlightId": 37,
+      "firstFlightId": 47,
       "amountCents": 28228,
       "currency": "USD",
       "type": "Confirmed",
       "legAmountCents": 14114,
-      "legsInBooking": 2
+      "legsInBooking": 2,
+      "approximate": false
     }
   },
   {
-    "id": 39,
-    "date": "2025-11-21",
-    "airline": "Frontier",
-    "flight": "F93696",
-    "origin": "PAE",
-    "destination": "LAS",
-    "miles": 894,
-    "minutes": 151,
-    "price": {
-      "firstFlightId": 39,
-      "amountCents": 3398,
-      "currency": "USD",
-      "type": "Allocated",
-      "legAmountCents": 3398,
-      "legsInBooking": 1
-    }
-  },
-  {
-    "id": 40,
-    "date": "2025-11-23",
-    "airline": "Delta",
-    "flight": "DL2880",
-    "origin": "LAS",
-    "destination": "SEA",
-    "miles": 867,
-    "minutes": 171,
-    "price": {
-      "firstFlightId": 40,
-      "amountCents": 19848,
-      "currency": "USD",
-      "type": "Allocated",
-      "legAmountCents": 19848,
-      "legsInBooking": 1
-    }
-  },
-  {
-    "id": 41,
+    "id": 49,
     "date": "2025-11-25",
     "airline": "ANA",
     "flight": "NH117",
@@ -715,16 +924,17 @@
     "miles": 4792,
     "minutes": 635,
     "price": {
-      "firstFlightId": 41,
+      "firstFlightId": 49,
       "amountCents": 74231,
       "currency": "USD",
       "type": "Allocated",
       "legAmountCents": 37116,
-      "legsInBooking": 2
+      "legsInBooking": 2,
+      "approximate": false
     }
   },
   {
-    "id": 42,
+    "id": 50,
     "date": "2025-12-06",
     "airline": "ANA",
     "flight": "NH118",
@@ -733,16 +943,17 @@
     "miles": 4792,
     "minutes": 545,
     "price": {
-      "firstFlightId": 41,
+      "firstFlightId": 49,
       "amountCents": 74231,
       "currency": "USD",
       "type": "Allocated",
       "legAmountCents": 37115,
-      "legsInBooking": 2
+      "legsInBooking": 2,
+      "approximate": false
     }
   },
   {
-    "id": 43,
+    "id": 51,
     "date": "2026-02-27",
     "airline": "Delta",
     "flight": "DL344",
@@ -751,16 +962,17 @@
     "miles": 2640,
     "minutes": 381,
     "price": {
-      "firstFlightId": 43,
+      "firstFlightId": 51,
       "amountCents": 26110,
       "currency": "USD",
       "type": "Confirmed",
       "legAmountCents": 26110,
-      "legsInBooking": 1
+      "legsInBooking": 1,
+      "approximate": false
     }
   },
   {
-    "id": 44,
+    "id": 52,
     "date": "2026-03-04",
     "airline": "Alaska Airlines",
     "flight": "AS8389",
@@ -769,16 +981,57 @@
     "miles": 84,
     "minutes": 35,
     "price": {
-      "firstFlightId": 44,
+      "firstFlightId": 52,
       "amountCents": 3890,
       "currency": "USD",
       "type": "Confirmed",
       "legAmountCents": 3890,
-      "legsInBooking": 1
+      "legsInBooking": 1,
+      "approximate": false
     }
   },
   {
-    "id": 45,
+    "id": 53,
+    "date": "2026-03-07",
+    "airline": "Unknown",
+    "flight": "Unknown",
+    "origin": "KOA",
+    "destination": "HNL",
+    "miles": 164,
+    "minutes": null,
+    "price": {
+      "firstFlightId": 53,
+      "amountCents": 25000,
+      "currency": "USD",
+      "type": "Confirmed (user-provided, approx)",
+      "legAmountCents": 12500,
+      "legsInBooking": 2,
+      "approximate": true
+    },
+    "note": "Placeholder \u00b7 Mar 7\u20138, 2026; exact date, airline and flight number unconfirmed"
+  },
+  {
+    "id": 54,
+    "date": "2026-03-07",
+    "airline": "Unknown",
+    "flight": "Unknown",
+    "origin": "HNL",
+    "destination": "SEA",
+    "miles": 2677,
+    "minutes": null,
+    "price": {
+      "firstFlightId": 53,
+      "amountCents": 25000,
+      "currency": "USD",
+      "type": "Confirmed (user-provided, approx)",
+      "legAmountCents": 12500,
+      "legsInBooking": 2,
+      "approximate": true
+    },
+    "note": "Placeholder \u00b7 Mar 7\u20138, 2026; exact date, airline and flight number unconfirmed"
+  },
+  {
+    "id": 55,
     "date": "2026-03-31",
     "airline": "American",
     "flight": "AA6420",
@@ -787,16 +1040,17 @@
     "miles": 955,
     "minutes": 186,
     "price": {
-      "firstFlightId": 45,
+      "firstFlightId": 55,
       "amountCents": 14840,
       "currency": "USD",
       "type": "Confirmed",
       "legAmountCents": 14840,
-      "legsInBooking": 1
+      "legsInBooking": 1,
+      "approximate": false
     }
   },
   {
-    "id": 46,
+    "id": 56,
     "date": "2026-03-31",
     "airline": "Alaska Airlines",
     "flight": "AS138",
@@ -805,16 +1059,17 @@
     "miles": 338,
     "minutes": 89,
     "price": {
-      "firstFlightId": 46,
+      "firstFlightId": 56,
       "amountCents": 12840,
       "currency": "USD",
       "type": "Confirmed",
       "legAmountCents": 12840,
-      "legsInBooking": 1
+      "legsInBooking": 1,
+      "approximate": false
     }
   },
   {
-    "id": 47,
+    "id": 57,
     "date": "2026-04-05",
     "airline": "Alaska Airlines",
     "flight": "AS580",
@@ -823,16 +1078,17 @@
     "miles": 679,
     "minutes": 137,
     "price": {
-      "firstFlightId": 47,
+      "firstFlightId": 57,
       "amountCents": 16840,
       "currency": "USD",
       "type": "Confirmed",
       "legAmountCents": 16840,
-      "legsInBooking": 1
+      "legsInBooking": 1,
+      "approximate": false
     }
   },
   {
-    "id": 48,
+    "id": 58,
     "date": "2026-05-01",
     "airline": "Lufthansa",
     "flight": "LH489",
@@ -841,16 +1097,17 @@
     "miles": 5268,
     "minutes": 590,
     "price": {
-      "firstFlightId": 48,
+      "firstFlightId": 58,
       "amountCents": 66705,
       "currency": "USD",
       "type": "Allocated",
       "legAmountCents": 33353,
-      "legsInBooking": 2
+      "legsInBooking": 2,
+      "approximate": false
     }
   },
   {
-    "id": 49,
+    "id": 59,
     "date": "2026-05-02",
     "airline": "Lufthansa",
     "flight": "LH1716",
@@ -859,16 +1116,17 @@
     "miles": 397,
     "minutes": 80,
     "price": {
-      "firstFlightId": 48,
+      "firstFlightId": 58,
       "amountCents": 66705,
       "currency": "USD",
       "type": "Allocated",
       "legAmountCents": 33352,
-      "legsInBooking": 2
+      "legsInBooking": 2,
+      "approximate": false
     }
   },
   {
-    "id": 50,
+    "id": 60,
     "date": "2026-05-08",
     "airline": "Air Serbia",
     "flight": "JU723",
@@ -877,16 +1135,17 @@
     "miles": 186,
     "minutes": 60,
     "price": {
-      "firstFlightId": 50,
+      "firstFlightId": 60,
       "amountCents": 15550,
       "currency": "USD",
       "type": "Allocated",
       "legAmountCents": 7775,
-      "legsInBooking": 2
+      "legsInBooking": 2,
+      "approximate": false
     }
   },
   {
-    "id": 51,
+    "id": 61,
     "date": "2026-05-08",
     "airline": "Air Serbia",
     "flight": "JU534",
@@ -895,16 +1154,17 @@
     "miles": 511,
     "minutes": 95,
     "price": {
-      "firstFlightId": 50,
+      "firstFlightId": 60,
       "amountCents": 15550,
       "currency": "USD",
       "type": "Allocated",
       "legAmountCents": 7775,
-      "legsInBooking": 2
+      "legsInBooking": 2,
+      "approximate": false
     }
   },
   {
-    "id": 52,
+    "id": 62,
     "date": "2026-05-10",
     "airline": "Aegean",
     "flight": "A3360",
@@ -913,16 +1173,17 @@
     "miles": 136,
     "minutes": 50,
     "price": {
-      "firstFlightId": 52,
+      "firstFlightId": 62,
       "amountCents": 12610,
       "currency": "USD",
       "type": "Allocated",
       "legAmountCents": 12610,
-      "legsInBooking": 1
+      "legsInBooking": 1,
+      "approximate": false
     }
   },
   {
-    "id": 53,
+    "id": 63,
     "date": "2026-05-13",
     "airline": "Aegean",
     "flight": "A3351",
@@ -931,16 +1192,17 @@
     "miles": 136,
     "minutes": 45,
     "price": {
-      "firstFlightId": 53,
+      "firstFlightId": 63,
       "amountCents": 15130,
       "currency": "USD",
       "type": "Allocated",
       "legAmountCents": 15130,
-      "legsInBooking": 1
+      "legsInBooking": 1,
+      "approximate": false
     }
   },
   {
-    "id": 54,
+    "id": 64,
     "date": "2026-05-13",
     "airline": "American",
     "flight": "AA161",
@@ -949,16 +1211,17 @@
     "miles": 5450,
     "minutes": 710,
     "price": {
-      "firstFlightId": 54,
+      "firstFlightId": 64,
       "amountCents": 65403,
       "currency": "USD",
       "type": "Allocated",
       "legAmountCents": 32702,
-      "legsInBooking": 2
+      "legsInBooking": 2,
+      "approximate": false
     }
   },
   {
-    "id": 55,
+    "id": 65,
     "date": "2026-05-13",
     "airline": "American",
     "flight": "AA2398",
@@ -967,16 +1230,17 @@
     "miles": 1716,
     "minutes": 284,
     "price": {
-      "firstFlightId": 54,
+      "firstFlightId": 64,
       "amountCents": 65403,
       "currency": "USD",
       "type": "Allocated",
       "legAmountCents": 32701,
-      "legsInBooking": 2
+      "legsInBooking": 2,
+      "approximate": false
     }
   },
   {
-    "id": 56,
+    "id": 66,
     "date": "2026-09-11",
     "airline": "Alaska Airlines",
     "flight": "AS1444",
@@ -985,16 +1249,17 @@
     "miles": 697,
     "minutes": 134,
     "price": {
-      "firstFlightId": 56,
+      "firstFlightId": 66,
       "amountCents": 15679,
       "currency": "USD",
       "type": "Confirmed",
       "legAmountCents": 7840,
-      "legsInBooking": 2
+      "legsInBooking": 2,
+      "approximate": false
     }
   },
   {
-    "id": 57,
+    "id": 67,
     "date": "2026-09-14",
     "airline": "Alaska Airlines",
     "flight": "AS1304",
@@ -1003,16 +1268,17 @@
     "miles": 697,
     "minutes": 137,
     "price": {
-      "firstFlightId": 56,
+      "firstFlightId": 66,
       "amountCents": 15679,
       "currency": "USD",
       "type": "Confirmed",
       "legAmountCents": 7839,
-      "legsInBooking": 2
+      "legsInBooking": 2,
+      "approximate": false
     }
   },
   {
-    "id": 58,
+    "id": 68,
     "date": "2026-10-15",
     "airline": "American",
     "flight": "AA1471",
@@ -1021,16 +1287,17 @@
     "miles": 2721,
     "minutes": 343,
     "price": {
-      "firstFlightId": 58,
+      "firstFlightId": 68,
       "amountCents": 78673,
       "currency": "USD",
       "type": "Confirmed",
       "legAmountCents": 19669,
-      "legsInBooking": 4
+      "legsInBooking": 4,
+      "approximate": false
     }
   },
   {
-    "id": 59,
+    "id": 69,
     "date": "2026-10-16",
     "airline": "American",
     "flight": "AA1145",
@@ -1039,16 +1306,17 @@
     "miles": 1106,
     "minutes": 173,
     "price": {
-      "firstFlightId": 58,
+      "firstFlightId": 68,
       "amountCents": 78673,
       "currency": "USD",
       "type": "Confirmed",
       "legAmountCents": 19668,
-      "legsInBooking": 4
+      "legsInBooking": 4,
+      "approximate": false
     }
   },
   {
-    "id": 60,
+    "id": 70,
     "date": "2026-10-24",
     "airline": "American",
     "flight": "AA1144",
@@ -1057,16 +1325,17 @@
     "miles": 1106,
     "minutes": 183,
     "price": {
-      "firstFlightId": 58,
+      "firstFlightId": 68,
       "amountCents": 78673,
       "currency": "USD",
       "type": "Confirmed",
       "legAmountCents": 19668,
-      "legsInBooking": 4
+      "legsInBooking": 4,
+      "approximate": false
     }
   },
   {
-    "id": 61,
+    "id": 71,
     "date": "2026-10-24",
     "airline": "American",
     "flight": "AA3252",
@@ -1075,12 +1344,13 @@
     "miles": 2721,
     "minutes": 404,
     "price": {
-      "firstFlightId": 58,
+      "firstFlightId": 68,
       "amountCents": 78673,
       "currency": "USD",
       "type": "Confirmed",
       "legAmountCents": 19668,
-      "legsInBooking": 4
+      "legsInBooking": 4,
+      "approximate": false
     }
   }
 ]

@@ -1,6 +1,6 @@
 /* Public airport metadata: [city, longitude, latitude]. */
 const airports = {
-DEL:['Delhi',77.10,28.56],STV:['Surat',72.74,21.11],BOM:['Mumbai',72.87,19.09],SIN:['Singapore',103.99,1.36],SEA:['Seattle',-122.31,47.45],SFO:['San Francisco',-122.38,37.62],BOS:['Boston',-71.01,42.36],PHL:['Philadelphia',-75.24,39.87],DXB:['Dubai',55.36,25.25],LAS:['Las Vegas',-115.15,36.08],DEN:['Denver',-104.67,39.86],AUS:['Austin',-97.67,30.20],MSY:['New Orleans',-90.26,29.99],CUN:['Cancún',-86.88,21.04],ORD:['Chicago',-87.90,41.98],AMD:['Ahmedabad',72.63,23.08],IAD:['Washington, DC',-77.46,38.95],LAX:['Los Angeles',-118.41,33.94],PPT:['Tahiti',-149.61,-17.55],JFK:['New York',-73.78,40.64],PAE:['Everett',-122.28,47.91],HND:['Tokyo',139.78,35.55],OGG:['Maui',-156.43,20.90],KOA:['Kona',-156.05,19.74],MUC:['Munich',11.79,48.35],SPU:['Split',16.30,43.54],DBV:['Dubrovnik',18.27,42.56],BEG:['Belgrade',20.31,44.82],ATH:['Athens',23.94,37.94],JTR:['Santorini',25.48,36.40],SJC:['San José',-121.93,37.36],MIA:['Miami',-80.29,25.79],CTG:['Cartagena',-75.51,10.44]
+FRA:['Frankfurt',8.57,50.03],SAT:['San Antonio',-98.47,29.53],IAH:['Houston',-95.34,29.98],HNL:['Honolulu',-157.92,21.32],DEL:['Delhi',77.10,28.56],STV:['Surat',72.74,21.11],BOM:['Mumbai',72.87,19.09],SIN:['Singapore',103.99,1.36],SEA:['Seattle',-122.31,47.45],SFO:['San Francisco',-122.38,37.62],BOS:['Boston',-71.01,42.36],PHL:['Philadelphia',-75.24,39.87],DXB:['Dubai',55.36,25.25],LAS:['Las Vegas',-115.15,36.08],DEN:['Denver',-104.67,39.86],AUS:['Austin',-97.67,30.20],MSY:['New Orleans',-90.26,29.99],CUN:['Cancún',-86.88,21.04],ORD:['Chicago',-87.90,41.98],AMD:['Ahmedabad',72.63,23.08],IAD:['Washington, DC',-77.46,38.95],LAX:['Los Angeles',-118.41,33.94],PPT:['Tahiti',-149.61,-17.55],JFK:['New York',-73.78,40.64],PAE:['Everett',-122.28,47.91],HND:['Tokyo',139.78,35.55],OGG:['Maui',-156.43,20.90],KOA:['Kona',-156.05,19.74],MUC:['Munich',11.79,48.35],SPU:['Split',16.30,43.54],DBV:['Dubrovnik',18.27,42.56],BEG:['Belgrade',20.31,44.82],ATH:['Athens',23.94,37.94],JTR:['Santorini',25.48,36.40],SJC:['San José',-121.93,37.36],MIA:['Miami',-80.29,25.79],CTG:['Cartagena',-75.51,10.44]
 };
 let flights=[], year='all', query='', descending=true, world, mapLayer, projection, path, zoom;
 const $=id=>document.getElementById(id);
@@ -12,8 +12,8 @@ const money=(cents,currency)=>new Intl.NumberFormat('en-US',{style:'currency',cu
 function flightPrice(f){
  if(!f.price)return '<span class="price-unknown">Not recorded</span>';
  const p=f.price;
- const label=p.legsInBooking>1?`Estimated · 1/${p.legsInBooking} of booking`:p.type==='Allocated'?'Allocated passenger share':'Confirmed';
- return `${money(p.legAmountCents,p.currency)}<small>${label}</small>`;
+ const label=p.type.startsWith('Sponsored')?'Sponsored · no cost':p.approximate?(p.legsInBooking>1?`Approximate · 1/${p.legsInBooking} of booking`:'Approximate · user provided'):p.legsInBooking>1?`Estimated · 1/${p.legsInBooking} of booking`:p.type==='Allocated'?'Allocated passenger share':'Confirmed';
+ return `${p.approximate?'≈ ':''}${money(p.legAmountCents,p.currency)}<small>${label}</small>`;
 }
 function selected(){return flights.filter(f=>(year==='all'||f.date.startsWith(year))&&(!query||[f.airline,f.flight,f.origin,f.destination,city(f.origin),city(f.destination),f.date].join(' ').toLowerCase().includes(query)));}
 function rank(values){const counts=new Map();values.forEach(v=>counts.set(v,(counts.get(v)||0)+1));return [...counts].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]));}
@@ -38,11 +38,13 @@ function render(){
  const priced=data.filter(f=>f.price?.currency===currency);
  return priced.length?money(priced.reduce((sum,f)=>sum+f.price.legAmountCents,0),currency):null;
  }).filter(Boolean);
- $('price-summary').textContent=`Ticket cost for selected flights: ${totals.join(' + ')||'Not recorded'} · ${data.filter(f=>f.price).length} of ${data.length} flights priced`;
+ const approximate=data.some(f=>f.price?.approximate);
+ $('data-note').textContent=`Prices reflect Samarth’s share, with multi-leg booking totals split equally across legs (estimated). Any extra cent is assigned to the earliest legs. USD and INR are kept separate. Approximate source prices are marked ≈; sponsored flights cost $0. Ticket prices exclude extras. Completed flights only. Distances are great-circle estimates. Duration totals include available times${missing?`; ${missing} flight duration${missing===1?' is':'s are'} unknown`:''}.`;
+ $('price-summary').textContent=`Ticket cost for selected flights: ${approximate?'≈ ':''}${totals.join(' + ')||'Not recorded'} · ${data.filter(f=>f.price).length} of ${data.length} flights priced`;
  $('empty').hidden=data.length>0;
  $('flight-rows').replaceChildren(...[...data].sort((a,b)=>(descending?-1:1)*(a.date.localeCompare(b.date)||a.id-b.id)).map(f=>{
  const tr=document.createElement('tr');
- tr.innerHTML=`<td>${dateText(f.date)}</td><td class="route-cell" title="${city(f.origin)} to ${city(f.destination)}">${f.origin}<span>→</span>${f.destination}</td><td class="price-cell">${flightPrice(f)}</td><td class="airline-cell">${f.airline}<small>${f.flight==='Unknown'?'Flight number not recorded':f.flight}</small></td><td>${number(f.miles)} mi</td><td>${duration(f.minutes)}</td>`;
+ tr.innerHTML=`<td>${dateText(f.date)}${f.note?`<small class="flight-note">${f.note}</small>`:''}</td><td class="route-cell" title="${city(f.origin)} to ${city(f.destination)}">${f.origin}<span>→</span>${f.destination}</td><td class="price-cell">${flightPrice(f)}</td><td class="airline-cell">${f.airline}<small>${f.flight==='Unknown'?'Flight number not recorded':f.flight}</small></td><td>${number(f.miles)} mi</td><td>${f.durationApproximate?'≈ ':''}${duration(f.minutes)}</td>`;
  return tr;
  }));
  $('map-detail').textContent=data.length?'Select a route or airport to explore':'No matching flights';
@@ -70,7 +72,7 @@ function renderMap(data,codes){
 }
 async function init(){
  try {
- [flights,world]=await Promise.all([fetch('assets/flights.json').then(r=>{if(!r.ok)throw Error('Flight data unavailable');return r.json();}),fetch('assets/world.json').then(r=>{if(!r.ok)throw Error('Map data unavailable');return r.json();})]);
+ [flights,world]=await Promise.all([fetch('assets/flights.json?v=history-71').then(r=>{if(!r.ok)throw Error('Flight data unavailable');return r.json();}),fetch('assets/world.json').then(r=>{if(!r.ok)throw Error('Map data unavailable');return r.json();})]);
  const years=[...new Set(flights.map(f=>f.date.slice(0,4)))].sort();
  for(const y of ['all',...years]){const b=document.createElement('button');b.textContent=y==='all'?'All time':y;b.dataset.year=y;b.onclick=()=>{year=y;render();};$('years').append(b);}
  const svg=d3.select('#map');
